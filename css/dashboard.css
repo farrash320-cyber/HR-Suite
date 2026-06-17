@@ -487,3 +487,139 @@ body{
 }
 
 }
+
+/* =========================
+   CALENDAR
+========================= */
+
+.month{
+
+    text-align:center;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    margin-bottom:20px;
+
+}
+
+.weekdays{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(7,1fr);
+
+    text-align:center;
+
+    margin-bottom:15px;
+
+    color:gray;
+
+}
+
+.days{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(7,1fr);
+
+    gap:10px;
+
+}
+
+.days div{
+
+    height:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:10px;
+
+    transition:.3s;
+
+}
+
+.days div:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+
+/* =========================
+   ATTENDANCE OVERVIEW
+========================= */
+
+.overview{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.overview-card{
+
+    background:#f8fafc;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    text-align:center;
+
+}
+
+.overview-card h2{
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.overview-card span{
+
+    color:gray;
+
+}
+
+
+/* DARK MODE */
+
+body.dark-theme .overview-card{
+
+    background:#334155;
+
+}
+
+body.dark-theme .overview-card span{
+
+    color:#cbd5e1;
+
+}
+
+body.dark-theme .month,
+body.dark-theme .weekdays{
+
+    color:white;
+
+}
+
+body.dark-theme .days div{
+
+    color:white;
+
+}
