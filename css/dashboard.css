@@ -740,3 +740,19 @@ body.dark-theme .clock{
 }
 
 }
+
+/* =========================
+   DARK PROFILE
+========================= */
+
+body.dark-theme .profile h4{
+
+    color:white;
+
+}
+
+body.dark-theme .profile span{
+
+    color:#cbd5e1;
+
+}
