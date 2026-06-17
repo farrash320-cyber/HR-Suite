@@ -146,33 +146,36 @@ localStorage.getItem(
 
 
 // ======================================
-// NOTIFICATION
+// NOTIFICATION PANEL
 // ======================================
 
+let notification =
 document.querySelector(
 ".notification"
-)
-.addEventListener(
+);
+
+let notificationPanel =
+document.querySelector(
+".notification-panel"
+);
+
+notification.addEventListener(
 "click",()=>{
 
-    alert(
+if(
+notificationPanel.style.display==="block"
+){
 
-`Notifications
+notificationPanel.style.display="none";
 
-• John requested leave
+}
+else{
 
-• Payroll generated
+notificationPanel.style.display="block";
 
-• Meeting reminder
-
-• Company meeting Monday
-
-• Salary release on 25th`
-
-    );
+}
 
 });
-
 
 
 
