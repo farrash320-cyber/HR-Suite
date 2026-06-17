@@ -67,7 +67,7 @@
 
             <li>
 
-                <i class="fa-solid fa-calendar"></i>
+                <i class="fa-solid fa-calendar-days"></i>
 
                 Off Day Planner
 
@@ -97,6 +97,15 @@
                 <i class="fa-solid fa-building"></i>
 
                 Department
+
+            </li>
+
+
+            <li>
+
+                <i class="fa-solid fa-bullhorn"></i>
+
+                Announcement
 
             </li>
 
@@ -139,24 +148,19 @@
         <!-- Header -->
         <div class="top-bar">
 
-            <div>
+            <div class="search-box">
 
-                <h2>
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-                    Welcome Back, Admin
-
-                </h2>
-
-                <p>
-
-                    NEXORA Human Resource Suite
-
-                </p>
+                <input
+                    type="text"
+                    placeholder="Search anything...">
 
             </div>
 
 
             <div class="header-right">
+
 
                 <div class="notification">
 
@@ -167,6 +171,13 @@
                         3
 
                     </span>
+
+                </div>
+
+
+                <div class="dark-mode">
+
+                    <i class="fa-solid fa-moon"></i>
 
                 </div>
 
@@ -207,6 +218,25 @@
                 </div>
 
             </div>
+
+        </div>
+
+
+
+        <!-- Greeting -->
+        <div class="greeting">
+
+            <h2>
+
+                Welcome Back, Admin
+
+            </h2>
+
+            <p>
+
+                Have a productive day.
+
+            </p>
 
         </div>
 
@@ -254,11 +284,44 @@
 
 
 
+        <!-- Quick Action -->
+        <div class="quick-action">
+
+            <button>
+
+                + Add Employee
+
+            </button>
+
+
+            <button>
+
+                + Attendance
+
+            </button>
+
+
+            <button>
+
+                + Leave Request
+
+            </button>
+
+
+            <button>
+
+                + Payroll
+
+            </button>
+
+        </div>
+
+
+
         <!-- Panels -->
         <div class="panel-wrapper">
 
 
-            <!-- Recent Activity -->
             <div class="panel">
 
                 <h3>
@@ -269,28 +332,20 @@
 
                 <ul>
 
-                    <li>
-                        James Kirdpan checked in.
-                    </li>
+                    <li>James checked in.</li>
 
-                    <li>
-                        John Doe submitted leave request.
-                    </li>
+                    <li>John submitted leave request.</li>
 
-                    <li>
-                        Michael Lee updated profile.
-                    </li>
+                    <li>Payroll generated.</li>
 
-                    <li>
-                        Payroll completed.
-                    </li>
+                    <li>Meeting reminder.</li>
 
                 </ul>
 
             </div>
 
 
-            <!-- Announcement -->
+
             <div class="panel">
 
                 <h3>
@@ -301,26 +356,17 @@
 
                 <ul>
 
-                    <li>
-                        Company Meeting - Monday.
-                    </li>
+                    <li>Salary release on 25th.</li>
 
-                    <li>
-                        Salary release on 25th.
-                    </li>
+                    <li>Public holiday updated.</li>
 
-                    <li>
-                        Team Building next month.
-                    </li>
+                    <li>Team building next month.</li>
 
-                    <li>
-                        Public Holiday updated.
-                    </li>
+                    <li>Company meeting Monday.</li>
 
                 </ul>
 
             </div>
-
 
         </div>
 
@@ -333,4 +379,5 @@
 <script src="js/dashboard.js"></script>
 
 </body>
+
 </html>
