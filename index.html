@@ -1,48 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NEXORA Human Resource Suite</title>
 
-<link rel="stylesheet" href="css/global.css">
-<link rel="stylesheet" href="css/login.css">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>NEXORA Human Resource Suite</title>
+
+    <link rel="stylesheet" href="css/global.css">
+
+    <link rel="stylesheet" href="css/login.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 </head>
+
 <body>
 
-<div class="login-container">
+    <div class="background">
 
-    <div class="login-box">
+        <div class="login-card">
 
-        <div class="logo">
+            <!-- Logo -->
+            <div class="logo">
 
-            <h1>NEXORA</h1>
+                <h1>NEXORA</h1>
 
-            <p>Human Resource Suite</p>
+                <span>Human Resource Suite</span>
+
+            </div>
+
+            <!-- Welcome -->
+            <div class="welcome">
+
+                <h2>Welcome Back</h2>
+
+                <p>Please login to continue</p>
+
+            </div>
+
+            <!-- Error -->
+            <div id="error-message">
+
+            </div>
+
+            <!-- Form -->
+            <form id="loginForm">
+
+                <!-- Username -->
+                <div class="input-group">
+
+                    <label>Username</label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter your username">
+
+                </div>
+
+
+                <!-- Password -->
+                <div class="input-group">
+
+                    <label>Password</label>
+
+                    <div class="password-box">
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password">
+
+                        <i
+                            class="fa-solid fa-eye"
+                            id="togglePassword">
+
+                        </i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Remember Me -->
+                <div class="option-area">
+
+                    <div class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="remember">
+
+                        <label for="remember">
+
+                            Remember Me
+
+                        </label>
+
+                    </div>
+
+                    <a href="#">
+
+                        Forgot Password?
+
+                    </a>
+
+                </div>
+
+
+                <!-- Button -->
+                <button
+                    type="submit"
+                    class="login-btn">
+
+                    Login
+
+                </button>
+
+            </form>
+
+
+            <!-- Footer -->
+            <div class="footer">
+
+                © 2026 NEXORA Human Resource Suite
+
+            </div>
 
         </div>
 
-        <h2>Welcome Back</h2>
-
-        <input
-        type="text"
-        id="username"
-        placeholder="Username">
-
-        <input
-        type="password"
-        id="password"
-        placeholder="Password">
-
-        <button onclick="login()">
-            Login
-        </button>
-
     </div>
 
-</div>
+    <script src="js/login.js"></script>
 
-<script src="js/login.js"></script>
+    <script src="js/session.js"></script>
 
 </body>
+
 </html>
