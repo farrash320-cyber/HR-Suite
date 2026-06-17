@@ -25,7 +25,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <div class="container">
 
-    <!-- Sidebar -->
+    <!-- SIDEBAR -->
     <aside class="sidebar">
 
         <div class="logo">
@@ -39,91 +39,58 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         <ul>
 
             <li class="active">
-
                 <i class="fa-solid fa-house"></i>
-
                 Dashboard
-
             </li>
 
             <li>
-
                 <i class="fa-solid fa-users"></i>
-
                 Employee Management
-
             </li>
 
             <li>
-
                 <i class="fa-solid fa-clock"></i>
-
                 Attendance
-
             </li>
 
             <li>
-
                 <i class="fa-solid fa-calendar-days"></i>
-
                 Off Day Planner
-
             </li>
 
             <li>
-
                 <i class="fa-solid fa-file-lines"></i>
-
                 Leave Request
-
             </li>
 
             <li>
-
                 <i class="fa-solid fa-money-bill-wave"></i>
-
                 Payroll
-
             </li>
 
             <li>
-
                 <i class="fa-solid fa-building"></i>
-
                 Department
-
             </li>
 
             <li>
-
                 <i class="fa-solid fa-bullhorn"></i>
-
                 Announcement
-
             </li>
 
             <li>
-
                 <i class="fa-solid fa-chart-column"></i>
-
                 Reports
-
             </li>
 
             <li>
-
                 <i class="fa-solid fa-gear"></i>
-
                 Settings
-
             </li>
 
             <li onclick="logout()">
-
                 <i class="fa-solid fa-right-from-bracket"></i>
-
                 Logout
-
             </li>
 
         </ul>
@@ -131,13 +98,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     </aside>
 
 
-
-    <!-- Main -->
+    <!-- MAIN -->
     <main class="main">
 
-
-        <!-- Header -->
-        <div class="top-bar">
+        <!-- HEADER -->
+        <section class="header">
 
             <div class="search-box">
 
@@ -149,7 +114,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             </div>
 
-
             <div class="header-right">
 
                 <div class="notification">
@@ -160,13 +124,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                 </div>
 
-
                 <div class="dark-mode">
 
                     <i class="fa-solid fa-moon"></i>
 
                 </div>
-
 
                 <div
                 class="clock"
@@ -176,74 +138,39 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                 </div>
 
+                <div class="profile">
 
-               <div class="profile">
+                    <div class="avatar">
 
-    <div class="avatar">
+                        A
 
-        A
+                    </div>
 
-    </div>
+                    <div>
 
-    <div class="profile-info">
+                        <h4>
 
-        <h4>
+                            Administrator
 
-            Administrator
+                        </h4>
 
-        </h4>
+                        <span>
 
-        <span>
+                            HR Manager
 
-            HR Manager
+                        </span>
 
-        </span>
+                    </div>
 
-    </div>
+                </div>
 
-    <i class="fa-solid fa-chevron-down"></i>
+            </div>
 
-    <div class="dropdown-menu">
-
-        <div>
-
-            <i class="fa-solid fa-user"></i>
-
-            Profile
-
-        </div>
-
-        <div>
-
-            <i class="fa-solid fa-id-card"></i>
-
-            My Account
-
-        </div>
-
-        <div>
-
-            <i class="fa-solid fa-gear"></i>
-
-            Settings
-
-        </div>
-
-        <div onclick="logout()">
-
-            <i class="fa-solid fa-right-from-bracket"></i>
-
-            Logout
-
-        </div>
-
-    </div>
-
-</div>
+        </section>
 
 
 
-        <!-- Greeting -->
+        <!-- GREETING -->
         <section class="greeting">
 
             <h2>
@@ -262,7 +189,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-        <!-- Cards -->
+        <!-- CARDS -->
         <section class="cards">
 
             <div class="card">
@@ -273,7 +200,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             </div>
 
-
             <div class="card">
 
                 <h3>Present Today</h3>
@@ -282,7 +208,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             </div>
 
-
             <div class="card">
 
                 <h3>On Leave</h3>
@@ -290,7 +215,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                 <h1>4</h1>
 
             </div>
-
 
             <div class="card">
 
@@ -304,7 +228,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
 
-        <!-- Row 1 -->
+        <!-- ROW 1 -->
         <section class="dashboard-grid">
 
             <div class="panel">
@@ -314,18 +238,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                     Recent Activity
 
                 </h3>
-
-                <ul>
-
-                    <li>James checked in</li>
-
-                    <li>John requested leave</li>
-
-                    <li>Payroll generated</li>
-
-                    <li>Meeting reminder</li>
-
-                </ul>
 
             </div>
 
@@ -338,25 +250,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                 </h3>
 
-                <ul>
-
-                    <li>Salary release on 25th</li>
-
-                    <li>Company meeting Monday</li>
-
-                    <li>Public holiday updated</li>
-
-                    <li>Team building next month</li>
-
-                </ul>
-
             </div>
 
         </section>
 
 
 
-        <!-- Row 2 -->
+        <!-- ROW 2 -->
         <section class="dashboard-grid">
 
             <div class="panel">
@@ -366,18 +266,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                     Recent Employees
 
                 </h3>
-
-                <ul>
-
-                    <li>James Kirdpan - Finance</li>
-
-                    <li>John Doe - HR</li>
-
-                    <li>Michael Lee - IT</li>
-
-                    <li>David Smith - Marketing</li>
-
-                </ul>
 
             </div>
 
@@ -390,266 +278,46 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                 </h3>
 
-                <div class="quick-action">
+            </div>
 
-                    <button>
+        </section>
 
-                        + Add Employee
 
-                    </button>
 
-                    <button>
+        <!-- ROW 3 -->
+        <section class="dashboard-grid">
 
-                        + Attendance
+            <div class="panel">
 
-                    </button>
+                <h3>
 
-                    <button>
+                    Calendar
 
-                        + Leave Request
+                </h3>
 
-                    </button>
+            </div>
 
-                    <button>
 
-                        + Payroll
+            <div class="panel">
 
-                    </button>
+                <h3>
 
-                </div>
+                    Attendance Overview
+
+                </h3>
 
             </div>
 
         </section>
 
 
-<!-- Row 3 -->
-<section class="dashboard-grid">
 
-    <!-- Calendar -->
-    <div class="panel">
-
-        <h3>
-
-            Calendar
-
-        </h3>
-
-        <div class="calendar">
-
-            <div class="month">
-
-                June 2026
-
-            </div>
-
-            <div class="weekdays">
-
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
-                <div>Sun</div>
-
-            </div>
-
-            <div class="days">
-
-                <div></div>
-                <div></div>
-
-                <div>1</div>
-                <div>2</div>
-                <div>3</div>
-                <div>4</div>
-                <div>5</div>
-
-                <div>6</div>
-                <div>7</div>
-                <div>8</div>
-                <div>9</div>
-                <div>10</div>
-                <div>11</div>
-                <div>12</div>
-
-                <div>13</div>
-                <div>14</div>
-                <div>15</div>
-                <div>16</div>
-                <div>17</div>
-                <div>18</div>
-                <div>19</div>
-
-                <div>20</div>
-                <div>21</div>
-                <div>22</div>
-                <div>23</div>
-                <div>24</div>
-                <div>25</div>
-                <div>26</div>
-
-                <div>27</div>
-                <div>28</div>
-                <div>29</div>
-                <div>30</div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- Attendance Overview -->
-    <div class="panel">
-
-        <h3>
-
-            Attendance Overview
-
-        </h3>
-
-        <div class="overview">
-
-            <div class="overview-card">
-
-                <h2>117</h2>
-
-                <span>Present</span>
-
-            </div>
-
-
-            <div class="overview-card">
-
-                <h2>2</h2>
-
-                <span>Absent</span>
-
-            </div>
-
-
-            <div class="overview-card">
-
-                <h2>4</h2>
-
-                <span>Leave</span>
-
-            </div>
-
-
-            <div class="overview-card">
-
-                <h2>4</h2>
-
-                <span>Off Day</span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-        
-
-        <!-- Chart -->
+        <!-- CHART -->
         <section class="panel chart-panel">
 
             <h3>
 
-                Attendance Overview
-
-                <section class="panel">
-
-    <h3>
-
-        Recent Employees
-
-    </h3>
-
-    <table class="employee-table">
-
-        <thead>
-
-        <tr>
-
-            <th>Name</th>
-
-            <th>Department</th>
-
-            <th>Status</th>
-
-        </tr>
-
-        </thead>
-
-        <tbody>
-
-        <tr>
-
-            <td>James Kirdpan</td>
-
-            <td>Finance</td>
-
-            <td>
-
-                <span class="status active-status">
-
-                    Active
-
-                </span>
-
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <td>John Doe</td>
-
-            <td>HR</td>
-
-            <td>
-
-                <span class="status active-status">
-
-                    Active
-
-                </span>
-
-            </td>
-
-        </tr>
-
-        <tr>
-
-            <td>Michael Lee</td>
-
-            <td>IT</td>
-
-            <td>
-
-                <span class="status inactive-status">
-
-                    Inactive
-
-                </span>
-
-            </td>
-
-        </tr>
-
-        </tbody>
-
-    </table>
-
-</section>
+                Attendance Chart
 
             </h3>
 
@@ -658,7 +326,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
             </canvas>
 
         </section>
-
 
     </main>
 
@@ -671,4 +338,5 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 <script src="js/dashboard.js"></script>
 
 </body>
+
 </html>
