@@ -20,52 +20,57 @@ function updateClock(){
 
     let options = {
 
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit"
 
     };
 
-    document.getElementById("clock").innerHTML =
-    now.toLocaleTimeString([], options);
+    document.getElementById(
+        "clock"
+    ).innerHTML =
+    now.toLocaleTimeString([],options);
 
 }
 
-setInterval(updateClock,1000);
-
 updateClock();
+
+setInterval(updateClock,1000);
 
 
 // =====================================
 // DYNAMIC GREETING
 // =====================================
 
-let currentHour =
+let hour =
 new Date().getHours();
 
-let greeting = "";
+let greetingText = "";
 
-if(currentHour < 12){
+if(hour < 12){
 
-    greeting =
+    greetingText =
     "Good Morning, Admin";
 
 }
-else if(currentHour < 18){
+else if(hour < 18){
 
-    greeting =
+    greetingText =
     "Good Afternoon, Admin";
 
 }
 else{
 
-    greeting =
+    greetingText =
     "Good Evening, Admin";
 
 }
 
-document.querySelector(".top-bar h2")
-.innerHTML = greeting;
+
+document.querySelector(
+".greeting h2"
+).innerHTML =
+greetingText;
 
 
 // =====================================
@@ -103,74 +108,6 @@ function logout(){
     }
 
 }
-
-
-// =====================================
-// CARD ANIMATION
-// =====================================
-
-let cards =
-document.querySelectorAll(".card");
-
-cards.forEach((card)=>{
-
-    card.addEventListener(
-        "mouseenter",
-        ()=>{
-
-            card.style.transform =
-            "translateY(-5px)";
-
-        }
-    );
-
-
-    card.addEventListener(
-        "mouseleave",
-        ()=>{
-
-            card.style.transform =
-            "translateY(0px)";
-
-        }
-    );
-
-});
-
-
-// =====================================
-// PANEL HOVER
-// =====================================
-
-let panels =
-document.querySelectorAll(".panel");
-
-panels.forEach((panel)=>{
-
-    panel.addEventListener(
-        "mouseenter",
-        ()=>{
-
-            panel.style.transform =
-            "translateY(-5px)";
-
-            panel.style.transition =
-            ".3s";
-
-        }
-    );
-
-    panel.addEventListener(
-        "mouseleave",
-        ()=>{
-
-            panel.style.transform =
-            "translateY(0px)";
-
-        }
-    );
-
-});
 
 
 // =====================================
