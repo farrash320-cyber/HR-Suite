@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Employee Management - NEXORA</title>
+<title>Employee Management | NEXORA Human Resource Suite</title>
 
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/employee.css">
@@ -17,146 +18,297 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 <div class="container">
 
-<!-- Sidebar -->
-<div class="sidebar">
+    <!-- Sidebar -->
+    <aside class="sidebar">
 
-<div class="logo">
-<h1>NEXORA</h1>
-<p>Human Resource Suite</p>
-</div>
+        <div class="logo">
 
-<ul>
+            <h1>NEXORA</h1>
 
-<li onclick="window.location='dashboard.html'">
-<i class="fa-solid fa-house"></i>
-Dashboard
-</li>
+            <span>Human Resource Suite</span>
 
-<li class="active">
-<i class="fa-solid fa-users"></i>
-Employee Management
-</li>
+        </div>
 
-<li>
-<i class="fa-solid fa-clock"></i>
-Attendance
-</li>
+        <ul>
 
-<li>
-<i class="fa-solid fa-calendar"></i>
-Off Day Planner
-</li>
+            <li onclick="window.location.href='dashboard.html'">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </li>
 
-<li>
-<i class="fa-solid fa-file"></i>
-Leave Request
-</li>
+            <li class="active">
+                <i class="fa-solid fa-users"></i>
+                Employee Management
+            </li>
 
-<li>
-<i class="fa-solid fa-money-bill"></i>
-Payroll
-</li>
+            <li>
+                <i class="fa-solid fa-clock"></i>
+                Attendance
+            </li>
 
-<li>
-<i class="fa-solid fa-chart-column"></i>
-Reports
-</li>
+            <li>
+                <i class="fa-solid fa-calendar"></i>
+                Off Day Planner
+            </li>
 
-<li>
-<i class="fa-solid fa-gear"></i>
-Settings
-</li>
+            <li>
+                <i class="fa-solid fa-file-lines"></i>
+                Leave Request
+            </li>
 
-</ul>
+            <li>
+                <i class="fa-solid fa-money-bill-wave"></i>
+                Payroll
+            </li>
 
-</div>
+            <li>
+                <i class="fa-solid fa-building"></i>
+                Department
+            </li>
 
-<!-- Main -->
-<div class="main">
+            <li>
+                <i class="fa-solid fa-chart-line"></i>
+                Reports
+            </li>
 
-<div class="top">
+            <li>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </li>
 
-<h2>Employee Management</h2>
+            <li>
+                <i class="fa-solid fa-right-from-bracket"></i>
+                Logout
+            </li>
 
-<button class="add-btn">
-+ Add Employee
-</button>
+        </ul>
 
-</div>
+    </aside>
 
-<div class="search-box">
 
-<input type="text"
-placeholder="Search employee...">
+    <!-- Main -->
+    <main class="main">
 
-</div>
+        <!-- Header -->
+        <div class="top-bar">
 
-<table>
+            <div>
 
-<thead>
+                <h2>Employee Management</h2>
 
-<tr>
-<th>ID</th>
-<th>Name</th>
-<th>Department</th>
-<th>Position</th>
-<th>Status</th>
-<th>Action</th>
-</tr>
+                <p>Manage all employees in NEXORA.</p>
 
-</thead>
+            </div>
 
-<tbody>
+            <button class="add-btn">
 
-<tr>
+                <i class="fa-solid fa-plus"></i>
 
-<td>EMP001</td>
-<td>James Kirdpan</td>
-<td>Finance</td>
-<td>Staff</td>
-<td>
-<span class="active-status">
-Active
-</span>
-</td>
+                Add Employee
 
-<td>
+            </button>
 
-<button>Edit</button>
-<button>Delete</button>
+        </div>
 
-</td>
 
-</tr>
+        <!-- Statistic Cards -->
+        <div class="cards">
 
-<tr>
+            <div class="card">
 
-<td>EMP002</td>
-<td>John Doe</td>
-<td>HR</td>
-<td>Manager</td>
-<td>
+                <h3>Total Employees</h3>
 
-<span class="active-status">
-Active
-</span>
+                <h1>125</h1>
 
-</td>
+            </div>
 
-<td>
+            <div class="card">
 
-<button>Edit</button>
-<button>Delete</button>
+                <h3>Active Employees</h3>
 
-</td>
+                <h1>118</h1>
 
-</tr>
+            </div>
 
-</tbody>
+            <div class="card">
 
-</table>
+                <h3>On Leave</h3>
 
-</div>
+                <h1>4</h1>
+
+            </div>
+
+            <div class="card">
+
+                <h3>Inactive</h3>
+
+                <h1>3</h1>
+
+            </div>
+
+        </div>
+
+
+        <!-- Search -->
+        <div class="search-area">
+
+            <input
+            type="text"
+            placeholder="Search employee...">
+
+        </div>
+
+
+        <!-- Table -->
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                <tr>
+
+                    <th>ID</th>
+
+                    <th>Name</th>
+
+                    <th>Department</th>
+
+                    <th>Position</th>
+
+                    <th>Status</th>
+
+                    <th>Action</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody>
+
+                <tr>
+
+                    <td>EMP001</td>
+
+                    <td>James Kirdpan</td>
+
+                    <td>Finance</td>
+
+                    <td>Staff</td>
+
+                    <td>
+
+                        <span class="status active-status">
+
+                            Active
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <button class="edit-btn">
+
+                            Edit
+
+                        </button>
+
+                        <button class="delete-btn">
+
+                            Delete
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>EMP002</td>
+
+                    <td>John Doe</td>
+
+                    <td>Human Resources</td>
+
+                    <td>Manager</td>
+
+                    <td>
+
+                        <span class="status active-status">
+
+                            Active
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <button class="edit-btn">
+
+                            Edit
+
+                        </button>
+
+                        <button class="delete-btn">
+
+                            Delete
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>EMP003</td>
+
+                    <td>Michael Lee</td>
+
+                    <td>IT</td>
+
+                    <td>Developer</td>
+
+                    <td>
+
+                        <span class="status inactive-status">
+
+                            Inactive
+
+                        </span>
+
+                    </td>
+
+                    <td>
+
+                        <button class="edit-btn">
+
+                            Edit
+
+                        </button>
+
+                        <button class="delete-btn">
+
+                            Delete
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
 
 </div>
 
