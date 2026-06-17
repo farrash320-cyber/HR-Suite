@@ -1,18 +1,18 @@
-// =====================================
+// ======================================
 // NEXORA DASHBOARD
-// =====================================
+// ======================================
 
 
-// =====================================
-// PROTECT PAGE
-// =====================================
+// ======================================
+// SESSION PROTECTION
+// ======================================
 
 protectPage();
 
 
-// =====================================
+// ======================================
 // REAL TIME CLOCK
-// =====================================
+// ======================================
 
 function updateClock(){
 
@@ -20,9 +20,9 @@ function updateClock(){
 
     let options = {
 
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
+        hour:"2-digit",
+        minute:"2-digit",
+        second:"2-digit"
 
     };
 
@@ -38,89 +38,39 @@ updateClock();
 setInterval(updateClock,1000);
 
 
-// =====================================
-// DYNAMIC GREETING
-// =====================================
 
-let hour =
-new Date().getHours();
+// ======================================
+// GREETING
+// ======================================
 
-let greetingText = "";
+let hour = new Date().getHours();
+
+let greeting = "";
 
 if(hour < 12){
 
-    greetingText =
-    "Good Morning, Admin";
+    greeting = "Good Morning, Admin";
 
 }
 else if(hour < 18){
 
-    greetingText =
-    "Good Afternoon, Admin";
+    greeting = "Good Afternoon, Admin";
 
 }
 else{
 
-    greetingText =
-    "Good Evening, Admin";
+    greeting = "Good Evening, Admin";
 
 }
-
 
 document.querySelector(
 ".greeting h2"
-).innerHTML =
-greetingText;
+).innerHTML = greeting;
 
 
-// =====================================
-// NOTIFICATION
-// =====================================
-
-let notificationCount = 3;
-
-document.querySelector(
-".notification span"
-).innerHTML =
-notificationCount;
-
-
-// =====================================
-// LOGOUT
-// =====================================
-
-function logout(){
-
-    let confirmLogout =
-    confirm(
-    "Are you sure you want to logout?"
-    );
-
-    if(confirmLogout){
-
-        sessionStorage.removeItem(
-        "isLoggedIn"
-        );
-
-        window.location.href =
-        "index.html";
-
-    }
-
-}
-
-
-// =====================================
-// DASHBOARD READY
-// =====================================
-
-console.log(
-"NEXORA Dashboard Ready"
-);
-
-// =====================================
+// ======================================
 // DARK MODE
-// =====================================
+// ======================================
 
 const darkButton =
 document.querySelector(
@@ -135,9 +85,9 @@ darkButton.addEventListener(
     );
 
     if(
-    document.body.classList.contains(
-    "dark-theme"
-    )
+        document.body.classList.contains(
+        "dark-theme"
+        )
     ){
 
         localStorage.setItem(
@@ -146,6 +96,7 @@ darkButton.addEventListener(
         );
 
     }
+
     else{
 
         localStorage.setItem(
@@ -158,16 +109,15 @@ darkButton.addEventListener(
 });
 
 
-// =====================================
+
+// ======================================
 // LOAD THEME
-// =====================================
+// ======================================
 
-let savedTheme =
-localStorage.getItem(
-"theme"
-);
-
-if(savedTheme==="dark"){
+if(
+localStorage.getItem("theme")
+==="dark"
+){
 
     document.body.classList.add(
     "dark-theme"
@@ -176,99 +126,10 @@ if(savedTheme==="dark"){
 }
 
 
-// =====================================
-// CARD ANIMATION
-// =====================================
 
-let cards =
-document.querySelectorAll(
-".card"
-);
-
-cards.forEach((card)=>{
-
-    card.addEventListener(
-    "mouseenter",()=>{
-
-        card.style.transform =
-        "translateY(-8px)";
-
-    });
-
-    card.addEventListener(
-    "mouseleave",()=>{
-
-        card.style.transform =
-        "translateY(0px)";
-
-    });
-
-});
-
-
-// =====================================
-// PANEL ANIMATION
-// =====================================
-
-let panels =
-document.querySelectorAll(
-".panel"
-);
-
-panels.forEach((panel)=>{
-
-    panel.addEventListener(
-    "mouseenter",()=>{
-
-        panel.style.transform =
-        "translateY(-8px)";
-
-    });
-
-    panel.addEventListener(
-    "mouseleave",()=>{
-
-        panel.style.transform =
-        "translateY(0px)";
-
-    });
-
-});
-
-
-// =====================================
-// QUICK ACTION BUTTON
-// =====================================
-
-let buttons =
-document.querySelectorAll(
-".quick-action button"
-);
-
-buttons.forEach((button)=>{
-
-    button.addEventListener(
-    "mouseenter",()=>{
-
-        button.style.transform =
-        "translateY(-5px)";
-
-    });
-
-    button.addEventListener(
-    "mouseleave",()=>{
-
-        button.style.transform =
-        "translateY(0px)";
-
-    });
-
-});
-
-
-// =====================================
-// NOTIFICATION CLICK
-// =====================================
+// ======================================
+// NOTIFICATION
+// ======================================
 
 document.querySelector(
 ".notification"
@@ -277,88 +138,186 @@ document.querySelector(
 "click",()=>{
 
     alert(
-    "You have "
-    +
-    notificationCount
-    +
-    " notifications."
+`Notifications
+
+• John requested leave
+
+• Payroll generated
+
+• Meeting reminder`
     );
 
 });
 
 
-// =====================================
-// SEARCH BOX
-// =====================================
 
-document.querySelector(
-".search-box input"
-)
-.addEventListener(
-"focus",()=>{
+// ======================================
+// CHART
+// ======================================
 
-    document.querySelector(
-    ".search-box"
-    ).style.boxShadow =
-    "0 10px 30px rgba(37,99,235,.25)";
+new Chart(
 
-});
+document.getElementById(
+"attendanceChart"
+),
 
+{
 
-document.querySelector(
-".search-box input"
-)
-.addEventListener(
-"blur",()=>{
+type:"line",
 
-    document.querySelector(
-    ".search-box"
-    ).style.boxShadow =
-    "0 8px 20px rgba(0,0,0,.08)";
+data:{
 
-});
+labels:[
+"Mon",
+"Tue",
+"Wed",
+"Thu",
+"Fri",
+"Sat",
+"Sun"
+],
 
+datasets:[{
 
-// =====================================
-// INITIALIZATION
-// =====================================
+label:"Attendance",
 
-window.onload = ()=>{
+data:[
+110,
+117,
+115,
+118,
+120,
+114,
+116
+],
 
-    console.log(
-    "NEXORA Human Resource Suite Loaded Successfully"
-    );
+fill:false,
 
-};
+borderWidth:3,
 
-// ====================================
-// PROFILE DROPDOWN
-// ====================================
+tension:.4
 
-let profile =
-document.querySelector(
-".profile"
+}]
+
+},
+
+options:{
+
+responsive:true,
+
+plugins:{
+
+legend:{
+
+display:true
+
+}
+
+}
+
+}
+
+}
+
 );
 
-let dropdown =
-document.querySelector(
-".dropdown-menu"
+
+
+
+// ======================================
+// CARD ANIMATION
+// ======================================
+
+let cards =
+document.querySelectorAll(
+".card"
 );
 
-profile.addEventListener(
-"click",()=>{
+cards.forEach((card)=>{
 
-    if(
-    dropdown.style.display==="block"
-    ){
+card.addEventListener(
+"mouseenter",()=>{
 
-        dropdown.style.display="none";
-
-    }
-    else{
-
-        dropdown.style.display="block";
-
-    }
+card.style.transform =
+"translateY(-5px)";
 
 });
+
+card.addEventListener(
+"mouseleave",()=>{
+
+card.style.transform =
+"translateY(0px)";
+
+});
+
+});
+
+
+
+
+// ======================================
+// PANEL ANIMATION
+// ======================================
+
+let panels =
+document.querySelectorAll(
+".panel"
+);
+
+panels.forEach((panel)=>{
+
+panel.addEventListener(
+"mouseenter",()=>{
+
+panel.style.transform =
+"translateY(-5px)";
+
+});
+
+panel.addEventListener(
+"mouseleave",()=>{
+
+panel.style.transform =
+"translateY(0px)";
+
+});
+
+});
+
+
+
+
+// ======================================
+// LOGOUT
+// ======================================
+
+function logout(){
+
+let confirmLogout =
+confirm(
+"Logout from NEXORA?"
+);
+
+if(confirmLogout){
+
+sessionStorage.removeItem(
+"isLoggedIn"
+);
+
+window.location.href =
+"index.html";
+
+}
+
+}
+
+
+
+// ======================================
+// READY
+// ======================================
+
+console.log(
+"NEXORA Dashboard Ready"
+);
