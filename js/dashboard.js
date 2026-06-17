@@ -117,3 +117,216 @@ function logout(){
 console.log(
 "NEXORA Dashboard Ready"
 );
+
+// =====================================
+// DARK MODE
+// =====================================
+
+const darkButton =
+document.querySelector(
+".dark-mode"
+);
+
+darkButton.addEventListener(
+"click",()=>{
+
+    document.body.classList.toggle(
+    "dark-theme"
+    );
+
+    if(
+    document.body.classList.contains(
+    "dark-theme"
+    )
+    ){
+
+        localStorage.setItem(
+        "theme",
+        "dark"
+        );
+
+    }
+    else{
+
+        localStorage.setItem(
+        "theme",
+        "light"
+        );
+
+    }
+
+});
+
+
+// =====================================
+// LOAD THEME
+// =====================================
+
+let savedTheme =
+localStorage.getItem(
+"theme"
+);
+
+if(savedTheme==="dark"){
+
+    document.body.classList.add(
+    "dark-theme"
+    );
+
+}
+
+
+// =====================================
+// CARD ANIMATION
+// =====================================
+
+let cards =
+document.querySelectorAll(
+".card"
+);
+
+cards.forEach((card)=>{
+
+    card.addEventListener(
+    "mouseenter",()=>{
+
+        card.style.transform =
+        "translateY(-8px)";
+
+    });
+
+    card.addEventListener(
+    "mouseleave",()=>{
+
+        card.style.transform =
+        "translateY(0px)";
+
+    });
+
+});
+
+
+// =====================================
+// PANEL ANIMATION
+// =====================================
+
+let panels =
+document.querySelectorAll(
+".panel"
+);
+
+panels.forEach((panel)=>{
+
+    panel.addEventListener(
+    "mouseenter",()=>{
+
+        panel.style.transform =
+        "translateY(-8px)";
+
+    });
+
+    panel.addEventListener(
+    "mouseleave",()=>{
+
+        panel.style.transform =
+        "translateY(0px)";
+
+    });
+
+});
+
+
+// =====================================
+// QUICK ACTION BUTTON
+// =====================================
+
+let buttons =
+document.querySelectorAll(
+".quick-action button"
+);
+
+buttons.forEach((button)=>{
+
+    button.addEventListener(
+    "mouseenter",()=>{
+
+        button.style.transform =
+        "translateY(-5px)";
+
+    });
+
+    button.addEventListener(
+    "mouseleave",()=>{
+
+        button.style.transform =
+        "translateY(0px)";
+
+    });
+
+});
+
+
+// =====================================
+// NOTIFICATION CLICK
+// =====================================
+
+document.querySelector(
+".notification"
+)
+.addEventListener(
+"click",()=>{
+
+    alert(
+    "You have "
+    +
+    notificationCount
+    +
+    " notifications."
+    );
+
+});
+
+
+// =====================================
+// SEARCH BOX
+// =====================================
+
+document.querySelector(
+".search-box input"
+)
+.addEventListener(
+"focus",()=>{
+
+    document.querySelector(
+    ".search-box"
+    ).style.boxShadow =
+    "0 10px 30px rgba(37,99,235,.25)";
+
+});
+
+
+document.querySelector(
+".search-box input"
+)
+.addEventListener(
+"blur",()=>{
+
+    document.querySelector(
+    ".search-box"
+    ).style.boxShadow =
+    "0 8px 20px rgba(0,0,0,.08)";
+
+});
+
+
+// =====================================
+// INITIALIZATION
+// =====================================
+
+window.onload = ()=>{
+
+    console.log(
+    "NEXORA Human Resource Suite Loaded Successfully"
+    );
+
+};
