@@ -1,1 +1,103 @@
+.container{
+display:flex;
+}
 
+.sidebar{
+width:270px;
+height:100vh;
+background:#0f172a;
+color:white;
+padding:25px;
+}
+
+.logo{
+margin-bottom:40px;
+}
+
+.logo p{
+color:#94a3b8;
+}
+
+.sidebar ul{
+list-style:none;
+}
+
+.sidebar li{
+padding:15px;
+margin-bottom:10px;
+border-radius:15px;
+cursor:pointer;
+}
+
+.sidebar li:hover{
+background:#1e293b;
+}
+
+.active{
+background:#2563eb;
+}
+
+.main{
+flex:1;
+padding:40px;
+background:#f1f5f9;
+}
+
+.top{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:30px;
+}
+
+.add-btn{
+background:#2563eb;
+color:white;
+border:none;
+padding:15px 20px;
+border-radius:12px;
+cursor:pointer;
+}
+
+.search-box input{
+width:300px;
+padding:15px;
+border-radius:12px;
+border:1px solid #ddd;
+margin-bottom:25px;
+}
+
+table{
+width:100%;
+background:white;
+border-collapse:collapse;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+th{
+background:#2563eb;
+color:white;
+padding:18px;
+}
+
+td{
+padding:18px;
+text-align:center;
+border-bottom:1px solid #eee;
+}
+
+.active-status{
+background:#22c55e;
+color:white;
+padding:7px 15px;
+border-radius:20px;
+}
+
+td button{
+padding:10px 15px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+}
