@@ -1,0 +1,291 @@
+/* =========================
+   BACKGROUND
+========================= */
+
+body{
+    background:linear-gradient(
+        135deg,
+        #0f172a,
+        #1e3a8a,
+        #2563eb
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    min-height:100vh;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.background{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+}
+
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card{
+
+    width:100%;
+    max-width:450px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.2);
+
+    box-shadow:
+    0 15px 40px rgba(0,0,0,.25);
+
+    border-radius:30px;
+
+    padding:45px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.logo{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.logo h1{
+    color:white;
+    font-size:48px;
+    letter-spacing:4px;
+    font-weight:700;
+}
+
+.logo span{
+    color:#cbd5e1;
+    font-size:15px;
+}
+
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.welcome h2{
+    color:white;
+    margin-bottom:8px;
+}
+
+.welcome p{
+    color:#cbd5e1;
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-group{
+    margin-bottom:20px;
+}
+
+.input-group label{
+    display:block;
+    color:white;
+    margin-bottom:10px;
+}
+
+.input-group input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.15);
+
+    color:white;
+
+    font-size:15px;
+}
+
+.input-group input::placeholder{
+    color:#cbd5e1;
+}
+
+.input-group input:focus{
+
+    background:rgba(255,255,255,.22);
+
+}
+
+
+/* =========================
+   PASSWORD
+========================= */
+
+.password-box{
+    position:relative;
+}
+
+.password-box i{
+
+    position:absolute;
+
+    right:20px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+
+/* =========================
+   OPTION
+========================= */
+
+.option-area{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.remember{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.remember label{
+    color:white;
+}
+
+.option-area a{
+    color:#dbeafe;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.login-btn{
+
+    width:100%;
+
+    padding:16px;
+
+    background:white;
+
+    color:#1d4ed8;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    border-radius:15px;
+
+    cursor:pointer;
+}
+
+.login-btn:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 10px 30px rgba(255,255,255,.25);
+
+}
+
+
+/* =========================
+   ERROR
+========================= */
+
+#error-message{
+
+    color:#fecaca;
+
+    text-align:center;
+
+    margin-bottom:20px;
+
+    font-size:14px;
+
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:#cbd5e1;
+
+    font-size:13px;
+
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:500px){
+
+.login-card{
+
+    padding:30px;
+
+}
+
+.logo h1{
+
+    font-size:38px;
+
+}
+
+.option-area{
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+}
