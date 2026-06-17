@@ -952,3 +952,84 @@ body.dark-theme .dropdown-menu div:hover{
     background:#334155;
 
 }
+
+/* =============================
+   PROFILE
+============================= */
+
+.profile{
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+
+/* DROPDOWN */
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:70px;
+
+    right:0;
+
+    width:220px;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.1);
+
+    display:none;
+
+    overflow:hidden;
+
+}
+
+
+.dropdown-menu div{
+
+    padding:18px;
+
+    transition:.3s;
+
+}
+
+.dropdown-menu div:hover{
+
+    background:#f1f5f9;
+
+}
+
+.dropdown-menu i{
+
+    width:30px;
+
+}
+
+
+/* DARK */
+
+body.dark-theme .dropdown-menu{
+
+    background:#1e293b;
+
+}
+
+body.dark-theme .dropdown-menu div{
+
+    color:white;
+
+}
+
+body.dark-theme .dropdown-menu div:hover{
+
+    background:#334155;
+
+}
