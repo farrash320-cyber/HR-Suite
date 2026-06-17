@@ -700,3 +700,255 @@ body{
     transition:.3s;
 
 }
+
+/* =================================
+   DARK THEME
+================================= */
+
+body.dark-theme{
+
+    background:#0f172a;
+
+}
+
+
+/* MAIN */
+
+body.dark-theme .main{
+
+    background:#0f172a;
+
+}
+
+
+/* SEARCH */
+
+body.dark-theme .search-box{
+
+    background:#1e293b;
+
+}
+
+body.dark-theme .search-box input{
+
+    color:white;
+
+}
+
+body.dark-theme .search-box i{
+
+    color:#cbd5e1;
+
+}
+
+
+/* CLOCK */
+
+body.dark-theme .clock{
+
+    background:#1e293b;
+
+    color:white;
+
+}
+
+
+/* DARK BUTTON */
+
+body.dark-theme .dark-mode{
+
+    background:#1e293b;
+
+    color:white;
+
+}
+
+
+/* PROFILE */
+
+body.dark-theme .profile h4{
+
+    color:white;
+
+}
+
+body.dark-theme .profile span{
+
+    color:#cbd5e1;
+
+}
+
+
+/* GREETING */
+
+body.dark-theme .greeting h2{
+
+    color:white;
+
+}
+
+body.dark-theme .greeting p{
+
+    color:#cbd5e1;
+
+}
+
+
+/* CARD */
+
+body.dark-theme .card{
+
+    background:#1e293b;
+
+}
+
+body.dark-theme .card h1{
+
+    color:white;
+
+}
+
+body.dark-theme .card h3{
+
+    color:#cbd5e1;
+
+}
+
+
+/* PANEL */
+
+body.dark-theme .panel{
+
+    background:#1e293b;
+
+}
+
+body.dark-theme .panel h3{
+
+    color:white;
+
+}
+
+body.dark-theme .panel li{
+
+    color:#cbd5e1;
+
+    border-bottom:
+
+    1px solid #334155;
+
+}
+
+
+/* QUICK ACTION */
+
+body.dark-theme .quick-action button{
+
+    background:#3b82f6;
+
+}
+
+
+/* SIDEBAR */
+
+body.dark-theme .sidebar{
+
+    background:#020617;
+
+}
+
+
+/* SCROLLBAR */
+
+body.dark-theme ::-webkit-scrollbar-track{
+
+    background:#1e293b;
+
+}
+
+body.dark-theme ::-webkit-scrollbar-thumb{
+
+    background:#475569;
+
+}
+
+/* =============================
+   PROFILE
+============================= */
+
+.profile{
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+
+/* DROPDOWN */
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:70px;
+
+    right:0;
+
+    width:220px;
+
+    background:white;
+
+    border-radius:20px;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.1);
+
+    display:none;
+
+    overflow:hidden;
+
+}
+
+
+.dropdown-menu div{
+
+    padding:18px;
+
+    transition:.3s;
+
+}
+
+.dropdown-menu div:hover{
+
+    background:#f1f5f9;
+
+}
+
+.dropdown-menu i{
+
+    width:30px;
+
+}
+
+
+/* DARK */
+
+body.dark-theme .dropdown-menu{
+
+    background:#1e293b;
+
+}
+
+body.dark-theme .dropdown-menu div{
+
+    color:white;
+
+}
+
+body.dark-theme .dropdown-menu div:hover{
+
+    background:#334155;
+
+}
