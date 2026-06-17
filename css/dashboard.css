@@ -821,3 +821,93 @@ body.dark-theme .dropdown-menu div:hover{
     background:#334155;
 
 }
+
+
+/* =========================
+   NOTIFICATION PANEL
+========================= */
+
+.notification{
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+.notification-panel{
+
+    position:absolute;
+
+    top:70px;
+
+    right:0;
+
+    width:280px;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    display:none;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.1);
+
+    z-index:9999;
+
+}
+
+.notification-panel h3{
+
+    padding:20px;
+
+}
+
+.notification-panel div{
+
+    padding:18px 20px;
+
+    border-top:
+    1px solid #e5e7eb;
+
+    transition:.3s;
+
+}
+
+.notification-panel div:hover{
+
+    background:#f8fafc;
+
+}
+
+
+/* DARK MODE */
+
+body.dark-theme .notification-panel{
+
+    background:#1e293b;
+
+}
+
+body.dark-theme .notification-panel h3{
+
+    color:white;
+
+}
+
+body.dark-theme .notification-panel div{
+
+    color:white;
+
+    border-color:#334155;
+
+}
+
+body.dark-theme .notification-panel div:hover{
+
+    background:#334155;
+
+}
