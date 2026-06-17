@@ -623,3 +623,112 @@ body.dark-theme .days div{
     color:white;
 
 }
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.profile{
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:70px;
+
+    right:0;
+
+    width:220px;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.1);
+
+    display:none;
+
+}
+
+.dropdown-menu div{
+
+    padding:18px;
+
+    transition:.3s;
+
+}
+
+.dropdown-menu div:hover{
+
+    background:#f8fafc;
+
+}
+
+.dropdown-menu i{
+
+    width:30px;
+
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+.employee-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.employee-table th{
+
+    padding:18px;
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+.employee-table td{
+
+    padding:18px;
+
+    border-bottom:
+    1px solid #e5e7eb;
+
+}
+
+.status{
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    color:white;
+
+}
+
+.active-status{
+
+    background:#22c55e;
+
+}
+
+.inactive-status{
+
+    background:#ef4444;
+
+}
