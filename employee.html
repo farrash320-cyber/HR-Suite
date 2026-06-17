@@ -1,1 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Employee Management - NEXORA</title>
+
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/employee.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body>
+
+<div class="container">
+
+<!-- Sidebar -->
+<div class="sidebar">
+
+<div class="logo">
+<h1>NEXORA</h1>
+<p>Human Resource Suite</p>
+</div>
+
+<ul>
+
+<li onclick="window.location='dashboard.html'">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</li>
+
+<li class="active">
+<i class="fa-solid fa-users"></i>
+Employee Management
+</li>
+
+<li>
+<i class="fa-solid fa-clock"></i>
+Attendance
+</li>
+
+<li>
+<i class="fa-solid fa-calendar"></i>
+Off Day Planner
+</li>
+
+<li>
+<i class="fa-solid fa-file"></i>
+Leave Request
+</li>
+
+<li>
+<i class="fa-solid fa-money-bill"></i>
+Payroll
+</li>
+
+<li>
+<i class="fa-solid fa-chart-column"></i>
+Reports
+</li>
+
+<li>
+<i class="fa-solid fa-gear"></i>
+Settings
+</li>
+
+</ul>
+
+</div>
+
+<!-- Main -->
+<div class="main">
+
+<div class="top">
+
+<h2>Employee Management</h2>
+
+<button class="add-btn">
++ Add Employee
+</button>
+
+</div>
+
+<div class="search-box">
+
+<input type="text"
+placeholder="Search employee...">
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Department</th>
+<th>Position</th>
+<th>Status</th>
+<th>Action</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>EMP001</td>
+<td>James Kirdpan</td>
+<td>Finance</td>
+<td>Staff</td>
+<td>
+<span class="active-status">
+Active
+</span>
+</td>
+
+<td>
+
+<button>Edit</button>
+<button>Delete</button>
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>EMP002</td>
+<td>John Doe</td>
+<td>HR</td>
+<td>Manager</td>
+<td>
+
+<span class="active-status">
+Active
+</span>
+
+</td>
+
+<td>
+
+<button>Edit</button>
+<button>Delete</button>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="js/employee.js"></script>
+
+</body>
+</html>
