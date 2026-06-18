@@ -623,3 +623,167 @@ body.dark-theme .modal{
     0 0 10px rgba(37,99,235,.2);
 
 }
+
+/* =========================
+   VIEW EMPLOYEE MODAL
+========================= */
+
+.view-modal{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+    rgba(0,0,0,.5);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+}
+
+
+.view-modal-content{
+
+    width:550px;
+
+    max-height:85vh;
+
+    overflow-y:auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:25px;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.15);
+
+}
+
+
+/* =========================
+   DETAIL GROUP
+========================= */
+
+.detail-group{
+
+    margin-bottom:20px;
+
+}
+
+.detail-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+    color:#64748b;
+
+}
+
+.detail-group p{
+
+    background:#f8fafc;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    color:#0f172a;
+
+}
+
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+
+.close-view-btn{
+
+    width:100%;
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    margin-top:25px;
+
+    transition:.3s;
+
+}
+
+.close-view-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-theme .view-modal-content{
+
+    background:#1e293b;
+
+}
+
+body.dark-theme .detail-group label{
+
+    color:#cbd5e1;
+
+}
+
+body.dark-theme .detail-group p{
+
+    background:#334155;
+
+    color:white;
+
+}
+
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+
+.view-modal-content{
+
+    width:90%;
+
+    padding:25px;
+
+}
+
+}
