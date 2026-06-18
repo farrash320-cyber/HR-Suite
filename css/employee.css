@@ -1,6 +1,6 @@
-/* =========================
+/* ======================================
    EMPLOYEE HEADER
-========================= */
+====================================== */
 
 .employee-header{
 
@@ -14,18 +14,42 @@
 
 }
 
+.header-action{
 
-/* =========================
+    display:flex;
+
+    gap:15px;
+
+}
+
+.header-action input{
+
+    width:250px;
+
+    padding:15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:15px;
+
+    outline:none;
+
+}
+
+
+
+
+/* ======================================
    ADD BUTTON
-========================= */
+====================================== */
 
 .add-btn{
+
+    border:none;
 
     background:#2563eb;
 
     color:white;
-
-    border:none;
 
     padding:15px 25px;
 
@@ -50,9 +74,9 @@
 
 
 
-/* =========================
+/* ======================================
    TABLE
-========================= */
+====================================== */
 
 .table-container{
 
@@ -93,9 +117,9 @@
 
 
 
-/* =========================
-   STATUS
-========================= */
+/* ======================================
+   STATUS BADGE
+====================================== */
 
 .status{
 
@@ -124,9 +148,9 @@
 
 
 
-/* =========================
+/* ======================================
    ACTION BUTTON
-========================= */
+====================================== */
 
 .view-btn,
 .edit-btn,
@@ -178,64 +202,9 @@
 
 }
 
-/* =========================
-   PAGINATION
-========================= */
-
-.pagination{
-
-    display:flex;
-
-    justify-content:flex-end;
-
-    gap:10px;
-
-    margin-top:30px;
-
-}
-
-.pagination button{
-
-    border:none;
-
-    background:white;
-
-    padding:12px 18px;
-
-    border-radius:12px;
-
-    cursor:pointer;
-
-    box-shadow:
-
-    0 5px 15px rgba(0,0,0,.08);
-
-    transition:.3s;
-
-}
-
-.pagination button:hover{
-
-    background:#2563eb;
-
-    color:white;
-
-}
-
-.page-active{
-
-    background:#2563eb !important;
-
-    color:white;
-
-}
-
-
-
-
-/* =========================
+/* ======================================
    MODAL
-========================= */
+====================================== */
 
 .modal,
 .view-modal,
@@ -251,9 +220,7 @@
 
     height:100%;
 
-    background:
-
-    rgba(0,0,0,.5);
+    background:rgba(0,0,0,.5);
 
     display:none;
 
@@ -268,9 +235,9 @@
 
 
 
-/* =========================
+/* ======================================
    MODAL CONTENT
-========================= */
+====================================== */
 
 .modal-content,
 .view-modal-content,
@@ -297,9 +264,9 @@
 
 
 
-/* =========================
+/* ======================================
    MODAL HEADER
-========================= */
+====================================== */
 
 .modal-header{
 
@@ -317,18 +284,18 @@
 .close-view-modal,
 .close-edit-modal{
 
-    cursor:pointer;
-
     font-size:25px;
+
+    cursor:pointer;
 
 }
 
 
 
 
-/* =========================
+/* ======================================
    FORM GROUP
-========================= */
+====================================== */
 
 .form-group{
 
@@ -342,7 +309,7 @@
 
     margin-bottom:10px;
 
-    font-weight:500;
+    font-weight:600;
 
 }
 
@@ -353,22 +320,33 @@
 
     padding:15px;
 
-    border:
-
-    1px solid #d1d5db;
+    border:1px solid #d1d5db;
 
     border-radius:15px;
 
     outline:none;
+
+    transition:.3s;
+
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+    border:1px solid #2563eb;
+
+    box-shadow:
+
+    0 0 10px rgba(37,99,235,.2);
 
 }
 
 
 
 
-/* =========================
+/* ======================================
    DETAIL GROUP
-========================= */
+====================================== */
 
 .detail-group{
 
@@ -382,9 +360,9 @@
 
     margin-bottom:10px;
 
-    font-weight:600;
-
     color:#64748b;
+
+    font-weight:600;
 
 }
 
@@ -401,9 +379,9 @@
 
 
 
-/* =========================
+/* ======================================
    BUTTON GROUP
-========================= */
+====================================== */
 
 .modal-button{
 
@@ -418,9 +396,9 @@
 
 
 
-/* =========================
-   SAVE / UPDATE BUTTON
-========================= */
+/* ======================================
+   SAVE & UPDATE BUTTON
+====================================== */
 
 .save-btn,
 .update-btn{
@@ -459,9 +437,9 @@
 
 
 
-/* =========================
+/* ======================================
    CANCEL BUTTON
-========================= */
+====================================== */
 
 .cancel-btn,
 .cancel-edit-btn{
@@ -500,9 +478,9 @@
 
 
 
-/* =========================
+/* ======================================
    CLOSE VIEW BUTTON
-========================= */
+====================================== */
 
 .close-view-btn{
 
@@ -534,9 +512,9 @@
 
 }
 
-/* =========================
+/* ======================================
    DARK MODE
-========================= */
+====================================== */
 
 body.dark-theme .modal-content,
 body.dark-theme .view-modal-content,
@@ -572,9 +550,7 @@ body.dark-theme .form-group select{
 
     background:#334155;
 
-    border:
-
-    1px solid #475569;
+    border:1px solid #475569;
 
     color:white;
 
@@ -598,73 +574,22 @@ body.dark-theme .employee-table td{
 
 }
 
-body.dark-theme .pagination button{
+body.dark-theme .header-action input{
 
-    background:#1e293b;
+    background:#334155;
+
+    border:1px solid #475569;
 
     color:white;
 
 }
 
-body.dark-theme .pagination button:hover{
-
-    background:#2563eb;
-
-}
-
-body.dark-theme .page-active{
-
-    background:#2563eb !important;
-
-}
 
 
 
-/* =========================
-   INPUT FOCUS
-========================= */
-
-.form-group input:focus,
-.form-group select:focus{
-
-    border:
-
-    1px solid #2563eb;
-
-    box-shadow:
-
-    0 0 10px rgba(37,99,235,.2);
-
-}
-
-
-
-
-/* =========================
-   TRANSITION
-========================= */
-
-.add-btn,
-.view-btn,
-.edit-btn,
-.delete-btn,
-.save-btn,
-.update-btn,
-.cancel-btn,
-.cancel-edit-btn,
-.close-view-btn,
-.pagination button{
-
-    transition:.3s;
-
-}
-
-
-
-
-/* =========================
+/* ======================================
    RESPONSIVE TABLET
-========================= */
+====================================== */
 
 @media(max-width:992px){
 
@@ -675,6 +600,18 @@ body.dark-theme .page-active{
     align-items:flex-start;
 
     gap:20px;
+
+}
+
+.header-action{
+
+    width:100%;
+
+}
+
+.header-action input{
+
+    flex:1;
 
 }
 
@@ -691,11 +628,29 @@ body.dark-theme .page-active{
 
 
 
-/* =========================
+/* ======================================
    RESPONSIVE MOBILE
-========================= */
+====================================== */
 
 @media(max-width:768px){
+
+.header-action{
+
+    flex-direction:column;
+
+}
+
+.header-action input{
+
+    width:100%;
+
+}
+
+.add-btn{
+
+    width:100%;
+
+}
 
 .employee-table{
 
@@ -723,25 +678,11 @@ body.dark-theme .page-active{
 
 
 
-/* =========================
+/* ======================================
    SMALL MOBILE
-========================= */
+====================================== */
 
 @media(max-width:576px){
-
-.add-btn{
-
-    width:100%;
-
-}
-
-.pagination{
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-}
 
 .modal-content,
 .view-modal-content,
@@ -756,24 +697,49 @@ body.dark-theme .page-active{
 
 
 
-/* =========================
-   SCROLLBAR
-========================= */
+/* ======================================
+   CUSTOM SCROLLBAR
+====================================== */
 
-.view-modal-content::-webkit-scrollbar,
+.table-container::-webkit-scrollbar,
 .modal-content::-webkit-scrollbar,
+.view-modal-content::-webkit-scrollbar,
 .edit-modal-content::-webkit-scrollbar{
 
     width:8px;
 
+    height:8px;
+
 }
 
-.view-modal-content::-webkit-scrollbar-thumb,
+.table-container::-webkit-scrollbar-thumb,
 .modal-content::-webkit-scrollbar-thumb,
+.view-modal-content::-webkit-scrollbar-thumb,
 .edit-modal-content::-webkit-scrollbar-thumb{
 
     background:#2563eb;
 
     border-radius:20px;
+
+}
+
+
+
+
+/* ======================================
+   ANIMATION
+====================================== */
+
+.add-btn,
+.view-btn,
+.edit-btn,
+.delete-btn,
+.save-btn,
+.update-btn,
+.cancel-btn,
+.cancel-edit-btn,
+.close-view-btn{
+
+    transition:.3s;
 
 }
