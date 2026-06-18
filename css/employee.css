@@ -43,7 +43,10 @@
 
     background:#1d4ed8;
 
+    transform:translateY(-3px);
+
 }
+
 
 
 
@@ -89,6 +92,7 @@
 
 
 
+
 /* =========================
    STATUS
 ========================= */
@@ -116,6 +120,7 @@
     background:#ef4444;
 
 }
+
 
 
 
@@ -227,11 +232,14 @@
 
 
 
+
 /* =========================
    MODAL
 ========================= */
 
-.modal{
+.modal,
+.view-modal,
+.edit-modal{
 
     position:fixed;
 
@@ -257,9 +265,22 @@
 
 }
 
-.modal-content{
 
-    width:500px;
+
+
+/* =========================
+   MODAL CONTENT
+========================= */
+
+.modal-content,
+.view-modal-content,
+.edit-modal-content{
+
+    width:550px;
+
+    max-height:85vh;
+
+    overflow-y:auto;
 
     background:white;
 
@@ -272,6 +293,7 @@
     0 10px 30px rgba(0,0,0,.15);
 
 }
+
 
 
 
@@ -291,7 +313,9 @@
 
 }
 
-.close-modal{
+.close-modal,
+.close-view-modal,
+.close-edit-modal{
 
     cursor:pointer;
 
@@ -301,8 +325,9 @@
 
 
 
+
 /* =========================
-   FORM
+   FORM GROUP
 ========================= */
 
 .form-group{
@@ -340,8 +365,44 @@
 
 
 
+
 /* =========================
-   MODAL BUTTON
+   DETAIL GROUP
+========================= */
+
+.detail-group{
+
+    margin-bottom:20px;
+
+}
+
+.detail-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+    color:#64748b;
+
+}
+
+.detail-group p{
+
+    background:#f8fafc;
+
+    padding:15px;
+
+    border-radius:15px;
+
+}
+
+
+
+
+/* =========================
+   BUTTON GROUP
 ========================= */
 
 .modal-button{
@@ -354,13 +415,21 @@
 
 }
 
-.save-btn{
+
+
+
+/* =========================
+   SAVE / UPDATE BUTTON
+========================= */
+
+.save-btn,
+.update-btn{
 
     flex:1;
 
     border:none;
 
-    background:#2563eb;
+    background:#22c55e;
 
     color:white;
 
@@ -370,9 +439,32 @@
 
     cursor:pointer;
 
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
 }
 
-.cancel-btn{
+.save-btn:hover,
+.update-btn:hover{
+
+    background:#16a34a;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+/* =========================
+   CANCEL BUTTON
+========================= */
+
+.cancel-btn,
+.cancel-edit-btn{
 
     flex:1;
 
@@ -388,13 +480,67 @@
 
     cursor:pointer;
 
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.cancel-btn:hover,
+.cancel-edit-btn:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-3px);
+
+}
+
+
+
+
+/* =========================
+   CLOSE VIEW BUTTON
+========================= */
+
+.close-view-btn{
+
+    width:100%;
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    margin-top:25px;
+
+    transition:.3s;
+
+}
+
+.close-view-btn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
 }
 
 /* =========================
    DARK MODE
 ========================= */
 
-body.dark-theme .modal-content{
+body.dark-theme .modal-content,
+body.dark-theme .view-modal-content,
+body.dark-theme .edit-modal-content{
 
     background:#1e293b;
 
@@ -406,15 +552,18 @@ body.dark-theme .modal-header h2{
 
 }
 
-body.dark-theme .close-modal{
+body.dark-theme .close-modal,
+body.dark-theme .close-view-modal,
+body.dark-theme .close-edit-modal{
 
     color:white;
 
 }
 
-body.dark-theme .form-group label{
+body.dark-theme .form-group label,
+body.dark-theme .detail-group label{
 
-    color:white;
+    color:#cbd5e1;
 
 }
 
@@ -426,6 +575,14 @@ body.dark-theme .form-group select{
     border:
 
     1px solid #475569;
+
+    color:white;
+
+}
+
+body.dark-theme .detail-group p{
+
+    background:#334155;
 
     color:white;
 
@@ -461,150 +618,6 @@ body.dark-theme .page-active{
 
 }
 
-body.dark-theme .modal{
-
-    background:
-
-    rgba(0,0,0,.7);
-
-}
-
-
-
-/* =========================
-   TRANSITION
-========================= */
-
-.add-btn,
-.view-btn,
-.edit-btn,
-.delete-btn,
-.pagination button,
-.save-btn,
-.cancel-btn,
-.form-group input,
-.form-group select{
-
-    transition:.3s;
-
-}
-
-
-
-/* =========================
-   RESPONSIVE TABLET
-========================= */
-
-@media(max-width:992px){
-
-.employee-header{
-
-    flex-direction:column;
-
-    align-items:flex-start;
-
-    gap:20px;
-
-}
-
-.modal-content{
-
-    width:90%;
-
-}
-
-}
-
-
-
-/* =========================
-   RESPONSIVE MOBILE
-========================= */
-
-@media(max-width:768px){
-
-.employee-table{
-
-    min-width:900px;
-
-}
-
-.modal-button{
-
-    flex-direction:column;
-
-}
-
-.save-btn,
-.cancel-btn{
-
-    width:100%;
-
-}
-
-}
-
-
-
-/* =========================
-   RESPONSIVE SMALL MOBILE
-========================= */
-
-@media(max-width:576px){
-
-.employee-header{
-
-    gap:15px;
-
-}
-
-.add-btn{
-
-    width:100%;
-
-}
-
-.pagination{
-
-    justify-content:center;
-
-    flex-wrap:wrap;
-
-}
-
-.modal-content{
-
-    padding:25px;
-
-}
-
-}
-
-
-
-/* =========================
-   HOVER EFFECT
-========================= */
-
-.add-btn:hover,
-.save-btn:hover{
-
-    transform:
-
-    translateY(-3px);
-
-}
-
-.cancel-btn:hover{
-
-    transform:
-
-    translateY(-3px);
-
-    background:#dc2626;
-
-}
-
 
 
 /* =========================
@@ -624,163 +637,115 @@ body.dark-theme .modal{
 
 }
 
-/* =========================
-   VIEW EMPLOYEE MODAL
-========================= */
 
-.view-modal{
-
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:100%;
-
-    background:
-    rgba(0,0,0,.5);
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:99999;
-
-}
-
-
-.view-modal-content{
-
-    width:550px;
-
-    max-height:85vh;
-
-    overflow-y:auto;
-
-    background:white;
-
-    padding:35px;
-
-    border-radius:25px;
-
-    box-shadow:
-
-    0 10px 30px rgba(0,0,0,.15);
-
-}
 
 
 /* =========================
-   DETAIL GROUP
+   TRANSITION
 ========================= */
 
-.detail-group{
-
-    margin-bottom:20px;
-
-}
-
-.detail-group label{
-
-    display:block;
-
-    margin-bottom:10px;
-
-    font-weight:600;
-
-    color:#64748b;
-
-}
-
-.detail-group p{
-
-    background:#f8fafc;
-
-    padding:15px;
-
-    border-radius:15px;
-
-    color:#0f172a;
-
-}
-
-
-/* =========================
-   CLOSE BUTTON
-========================= */
-
-.close-view-btn{
-
-    width:100%;
-
-    border:none;
-
-    background:#2563eb;
-
-    color:white;
-
-    padding:15px;
-
-    border-radius:15px;
-
-    cursor:pointer;
-
-    margin-top:25px;
+.add-btn,
+.view-btn,
+.edit-btn,
+.delete-btn,
+.save-btn,
+.update-btn,
+.cancel-btn,
+.cancel-edit-btn,
+.close-view-btn,
+.pagination button{
 
     transition:.3s;
 
 }
 
-.close-view-btn:hover{
-
-    background:#1d4ed8;
-
-    transform:translateY(-3px);
-
-}
 
 
 
 /* =========================
-   DARK MODE
+   RESPONSIVE TABLET
 ========================= */
 
-body.dark-theme .view-modal-content{
+@media(max-width:992px){
 
-    background:#1e293b;
+.employee-header{
+
+    flex-direction:column;
+
+    align-items:flex-start;
+
+    gap:20px;
+
+}
+
+.modal-content,
+.view-modal-content,
+.edit-modal-content{
+
+    width:90%;
 
 }
 
-body.dark-theme .detail-group label{
-
-    color:#cbd5e1;
-
 }
 
-body.dark-theme .detail-group p{
-
-    background:#334155;
-
-    color:white;
-
-}
 
 
 
 /* =========================
-   RESPONSIVE
+   RESPONSIVE MOBILE
 ========================= */
 
 @media(max-width:768px){
 
-.view-modal-content{
+.employee-table{
 
-    width:90%;
+    min-width:850px;
+
+}
+
+.modal-button{
+
+    flex-direction:column;
+
+}
+
+.save-btn,
+.update-btn,
+.cancel-btn,
+.cancel-edit-btn{
+
+    width:100%;
+
+}
+
+}
+
+
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width:576px){
+
+.add-btn{
+
+    width:100%;
+
+}
+
+.pagination{
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+}
+
+.modal-content,
+.view-modal-content,
+.edit-modal-content{
 
     padding:25px;
 
@@ -788,130 +753,27 @@ body.dark-theme .detail-group p{
 
 }
 
-/* =========================
-   EDIT MODAL
-========================= */
 
-.edit-modal{
 
-    position:fixed;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:100%;
-
-    background:
-    rgba(0,0,0,.5);
-
-    display:none;
-
-    justify-content:center;
-
-    align-items:center;
-
-    z-index:99999;
-
-}
-
-.edit-modal-content{
-
-    width:500px;
-
-    background:white;
-
-    padding:35px;
-
-    border-radius:25px;
-
-}
-
-.update-btn{
-
-    flex:1;
-
-    border:none;
-
-    background:#22c55e;
-
-    color:white;
-
-    padding:15px;
-
-    border-radius:15px;
-
-    cursor:pointer;
-
-}
-
-body.dark-theme .edit-modal-content{
-
-    background:#1e293b;
-
-}
 
 /* =========================
-   EDIT BUTTONS
+   SCROLLBAR
 ========================= */
 
-.update-btn,
-.cancel-edit-btn{
+.view-modal-content::-webkit-scrollbar,
+.modal-content::-webkit-scrollbar,
+.edit-modal-content::-webkit-scrollbar{
 
-    flex:1;
-
-    height:55px;
-
-    border:none;
-
-    border-radius:15px;
-
-    cursor:pointer;
-
-    font-size:15px;
-
-    font-weight:600;
-
-    transition:.3s;
+    width:8px;
 
 }
 
+.view-modal-content::-webkit-scrollbar-thumb,
+.modal-content::-webkit-scrollbar-thumb,
+.edit-modal-content::-webkit-scrollbar-thumb{
 
-/* UPDATE */
+    background:#2563eb;
 
-.update-btn{
-
-    background:#22c55e;
-
-    color:white;
-
-}
-
-.update-btn:hover{
-
-    background:#16a34a;
-
-    transform:translateY(-3px);
-
-}
-
-
-/* CANCEL */
-
-.cancel-edit-btn{
-
-    background:#ef4444;
-
-    color:white;
-
-}
-
-.cancel-edit-btn:hover{
-
-    background:#dc2626;
-
-    transform:translateY(-3px);
+    border-radius:20px;
 
 }
