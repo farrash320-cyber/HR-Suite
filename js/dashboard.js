@@ -10,6 +10,8 @@
 protectPage();
 
 
+
+
 // ======================================
 // REAL TIME CLOCK
 // ======================================
@@ -20,9 +22,11 @@ function updateClock(){
 
     let options = {
 
-        hour: "2-digit",
-        minute: "2-digit",
-        second: "2-digit"
+        hour:"2-digit",
+
+        minute:"2-digit",
+
+        second:"2-digit"
 
     };
 
@@ -36,6 +40,7 @@ function updateClock(){
 updateClock();
 
 setInterval(updateClock,1000);
+
 
 
 
@@ -87,7 +92,7 @@ updateGreeting();
 // DARK MODE
 // ======================================
 
-let darkButton =
+const darkButton =
 document.querySelector(
 ".dark-mode"
 );
@@ -100,9 +105,9 @@ darkButton.addEventListener(
     );
 
     if(
-    document.body.classList.contains(
-    "dark-theme"
-    )
+        document.body.classList.contains(
+        "dark-theme"
+        )
     ){
 
         localStorage.setItem(
@@ -146,18 +151,30 @@ localStorage.getItem(
 
 
 // ======================================
+// DASHBOARD READY
+// ======================================
+
+console.log(
+
+"NEXORA Dashboard Loaded"
+
+);
+
+// ======================================
 // NOTIFICATION PANEL
 // ======================================
 
-let notification =
+const notification =
 document.querySelector(
 ".notification"
 );
 
-let notificationPanel =
+const notificationPanel =
 document.querySelector(
 ".notification-panel"
 );
+
+if(notification && notificationPanel){
 
 notification.addEventListener(
 "click",()=>{
@@ -173,9 +190,55 @@ else{
 
 notificationPanel.style.display="block";
 
+dropdown.style.display="none";
+
 }
 
 });
+
+}
+
+
+
+
+// ======================================
+// PROFILE DROPDOWN
+// ======================================
+
+const profile =
+document.querySelector(
+".profile"
+);
+
+const dropdown =
+document.querySelector(
+".dropdown-menu"
+);
+
+if(profile && dropdown){
+
+profile.addEventListener(
+"click",()=>{
+
+if(
+dropdown.style.display==="block"
+){
+
+dropdown.style.display="none";
+
+}
+else{
+
+dropdown.style.display="block";
+
+notificationPanel.style.display="none";
+
+}
+
+});
+
+}
+
 
 
 
@@ -183,11 +246,16 @@ notificationPanel.style.display="block";
 // ATTENDANCE CHART
 // ======================================
 
-new Chart(
-
+const chartCanvas =
 document.getElementById(
 "attendanceChart"
-),
+);
+
+if(chartCanvas){
+
+new Chart(
+
+chartCanvas,
 
 {
 
@@ -233,23 +301,15 @@ options:{
 
 responsive:true,
 
-maintainAspectRatio:false,
-
-plugins:{
-
-legend:{
-
-display:true
-
-}
-
-}
+maintainAspectRatio:false
 
 }
 
 }
 
 );
+
+}
 
 
 
@@ -324,21 +384,53 @@ panel.style.transform =
 
 function logout(){
 
-    let confirmLogout =
-    confirm(
-    "Logout from NEXORA?"
-    );
+let confirmLogout =
+confirm(
+"Logout from NEXORA?"
+);
 
-    if(confirmLogout){
+if(confirmLogout){
 
-        sessionStorage.removeItem(
-        "isLoggedIn"
-        );
+sessionStorage.removeItem(
+"isLoggedIn"
+);
 
-        window.location.href =
-        "index.html";
+window.location.href =
+"index.html";
 
-    }
+}
+
+}
+
+// ======================================
+// QUICK ACTION
+// ======================================
+
+function goEmployee(){
+
+    window.location.href =
+    "employee.html";
+
+}
+
+function goAttendance(){
+
+    window.location.href =
+    "attendance.html";
+
+}
+
+function goLeave(){
+
+    window.location.href =
+    "leave.html";
+
+}
+
+function goPayroll(){
+
+    window.location.href =
+    "payroll.html";
 
 }
 
@@ -346,8 +438,206 @@ function logout(){
 
 
 // ======================================
-// DASHBOARD READY
+// SEARCH FUNCTION
 // ======================================
+
+const searchInput =
+document.getElementById(
+"searchInput"
+);
+
+if(searchInput){
+
+searchInput.addEventListener(
+"keypress",(e)=>{
+
+if(e.key==="Enter"){
+
+let keyword =
+e.target.value
+.toLowerCase();
+
+if(
+keyword.includes(
+"employee"
+)
+){
+
+window.location.href =
+"employee.html";
+
+}
+
+else if(
+keyword.includes(
+"attendance"
+)
+){
+
+window.location.href =
+"attendance.html";
+
+}
+
+else if(
+keyword.includes(
+"leave"
+)
+){
+
+window.location.href =
+"leave.html";
+
+}
+
+else if(
+keyword.includes(
+"payroll"
+)
+){
+
+window.location.href =
+"payroll.html";
+
+}
+
+else{
+
+alert(
+"Page not found."
+);
+
+}
+
+}
+
+});
+
+}
+
+
+
+
+// ======================================
+// DASHBOARD STATISTICS
+// ======================================
+
+const totalEmployee =
+document.getElementById(
+"totalEmployee"
+);
+
+const presentToday =
+document.getElementById(
+"presentToday"
+);
+
+const onLeave =
+document.getElementById(
+"onLeave"
+);
+
+const offDay =
+document.getElementById(
+"offDay"
+);
+
+if(totalEmployee){
+
+totalEmployee.innerHTML =
+125;
+
+}
+
+if(presentToday){
+
+presentToday.innerHTML =
+117;
+
+}
+
+if(onLeave){
+
+onLeave.innerHTML =
+4;
+
+}
+
+if(offDay){
+
+offDay.innerHTML =
+4;
+
+}
+
+
+
+
+// ======================================
+// RECENT ACTIVITY DATA
+// ======================================
+
+const recentActivity = [
+
+"James checked in",
+
+"John requested leave",
+
+"Payroll generated",
+
+"Meeting reminder"
+
+];
+
+console.log(
+recentActivity
+);
+
+
+
+
+// ======================================
+// CLOSE PANEL WHEN CLICK OUTSIDE
+// ======================================
+
+window.addEventListener(
+"click",(e)=>{
+
+if(
+notification &&
+!notification.contains(
+e.target
+)
+){
+
+notificationPanel.style.display =
+"none";
+
+}
+
+
+if(
+profile &&
+!profile.contains(
+e.target
+)
+){
+
+dropdown.style.display =
+"none";
+
+}
+
+});
+
+
+
+
+// ======================================
+// DASHBOARD INITIALIZATION
+// ======================================
+
+window.onload = ()=>{
 
 console.log(
 
@@ -355,57 +645,4 @@ console.log(
 
 );
 
-// ======================================
-// PROFILE DROPDOWN
-// ======================================
-
-let profile =
-document.querySelector(
-".profile"
-);
-
-let dropdown =
-document.querySelector(
-".dropdown-menu"
-);
-
-profile.addEventListener(
-"click",()=>{
-
-if(
-dropdown.style.display==="block"
-){
-
-dropdown.style.display="none";
-
-}
-else{
-
-dropdown.style.display="block";
-
-}
-
-});
-
-// ======================================
-// SIDEBAR COLLAPSE
-// ======================================
-
-let collapseButton =
-document.querySelector(
-".collapse-btn"
-);
-
-let sidebar =
-document.querySelector(
-".sidebar"
-);
-
-collapseButton.addEventListener(
-"click",()=>{
-
-sidebar.classList.toggle(
-"collapsed"
-);
-
-});
+};
