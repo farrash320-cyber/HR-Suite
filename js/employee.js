@@ -2,21 +2,19 @@
 // NEXORA EMPLOYEE MODULE
 // ======================================
 
-
-// ======================================
-// SESSION PROTECTION
-// ======================================
-
 protectPage();
 
 
-
-
 // ======================================
-// MODAL
+// ELEMENT
 // ======================================
 
-const modal =
+const employeeTable =
+document.querySelector(
+".employee-table tbody"
+);
+
+const addModal =
 document.querySelector(
 ".modal"
 );
@@ -36,6 +34,16 @@ document.querySelector(
 ".cancel-btn"
 );
 
+const saveButton =
+document.querySelector(
+".save-btn"
+);
+
+const searchInput =
+document.querySelector(
+".search-box input"
+);
+
 
 
 
@@ -45,13 +53,12 @@ document.querySelector(
 
 if(addButton){
 
-addButton.addEventListener(
-"click",()=>{
+addButton.onclick = ()=>{
 
-modal.style.display =
+addModal.style.display =
 "flex";
 
-});
+};
 
 }
 
@@ -64,88 +71,37 @@ modal.style.display =
 
 if(closeButton){
 
-closeButton.addEventListener(
-"click",()=>{
+closeButton.onclick = ()=>{
 
-modal.style.display =
+addModal.style.display =
 "none";
 
-});
+};
 
 }
 
 
 if(cancelButton){
 
-cancelButton.addEventListener(
-"click",()=>{
+cancelButton.onclick = ()=>{
 
-modal.style.display =
+addModal.style.display =
 "none";
 
-});
+};
 
 }
 
 
 
-
-// ======================================
-// CLOSE WHEN CLICK OUTSIDE
-// ======================================
-
-window.addEventListener(
-"click",(e)=>{
-
-if(
-e.target===modal
-){
-
-modal.style.display =
-"none";
-
-}
-
-});
-
-
-
-
-// ======================================
-// READY
-// ======================================
-
-console.log(
-
-"Employee Module Loaded"
-
-);
 
 // ======================================
 // SAVE EMPLOYEE
 // ======================================
 
-const saveButton =
-document.querySelector(
-".save-btn"
-);
-
-const tableBody =
-document.querySelector(
-".employee-table tbody"
-);
-
-const employeeCards =
-document.querySelectorAll(
-".card h1"
-);
-
-let employeeCount = 125;
-
 if(saveButton){
 
-saveButton.addEventListener(
-"click",()=>{
+saveButton.onclick = ()=>{
 
 const inputs =
 document.querySelectorAll(
@@ -191,10 +147,6 @@ return;
 }
 
 
-// ======================================
-// STATUS CLASS
-// ======================================
-
 let statusClass =
 status==="Active"
 ?
@@ -205,10 +157,6 @@ status==="Active"
 
 "inactive-status";
 
-
-// ======================================
-// CREATE ROW
-// ======================================
 
 let row =
 document.createElement(
@@ -261,24 +209,17 @@ Delete
 
 `;
 
-tableBody.appendChild(
+employeeTable.appendChild(
 row
 );
 
+saveEmployees();
 
-// ======================================
-// UPDATE COUNTER
-// ======================================
+updateStatistics();
 
-employeeCount++;
+addModal.style.display =
+"none";
 
-employeeCards[0].innerHTML =
-employeeCount;
-
-
-// ======================================
-// RESET FORM
-// ======================================
 
 inputs[0].value = "";
 
@@ -286,118 +227,9 @@ inputs[1].value = "";
 
 inputs[2].value = "";
 
-selects[0].selectedIndex = 0;
-
-selects[1].selectedIndex = 0;
-
-
-// ======================================
-// CLOSE MODAL
-// ======================================
-
-modal.style.display =
-"none";
-
-});
+};
 
 }
-
-// ======================================
-// DELETE EMPLOYEE
-// ======================================
-
-document.addEventListener(
-"click",(e)=>{
-
-if(
-e.target.classList.contains(
-"delete-btn"
-)
-){
-
-let confirmDelete =
-confirm(
-"Delete this employee?"
-);
-
-if(confirmDelete){
-
-e.target
-.parentElement
-.parentElement
-.remove();
-
-employeeCount--;
-
-employeeCards[0].innerHTML =
-employeeCount;
-
-saveEmployees();
-
-}
-
-}
-
-});
-
-
-
-
-// ======================================
-// VIEW EMPLOYEE
-// ======================================
-
-document.addEventListener(
-"click",(e)=>{
-
-if(
-e.target.classList.contains(
-"view-btn"
-)
-){
-
-let row =
-e.target
-.parentElement
-.parentElement;
-
-let employeeData =
-
-`
-
-Employee ID :
-
-${row.cells[0].innerText}
-
-
-Name :
-
-${row.cells[1].innerText}
-
-
-Department :
-
-${row.cells[2].innerText}
-
-
-Position :
-
-${row.cells[3].innerText}
-
-
-Status :
-
-${row.cells[4].innerText}
-
-`;
-
-alert(
-employeeData
-);
-
-}
-
-});
 
 
 
@@ -405,11 +237,6 @@ employeeData
 // ======================================
 // SEARCH EMPLOYEE
 // ======================================
-
-const searchInput =
-document.querySelector(
-".search-box input"
-);
 
 if(searchInput){
 
@@ -427,13 +254,13 @@ document.querySelectorAll(
 
 rows.forEach((row)=>{
 
-let name =
+let employeeName =
 row.cells[1]
 .innerText
 .toLowerCase();
 
 if(
-name.includes(
+employeeName.includes(
 keyword
 )
 ){
@@ -466,69 +293,74 @@ function saveEmployees(){
 
 localStorage.setItem(
 
-"employeeTable",
+"employeeData",
 
-tableBody.innerHTML
+employeeTable.innerHTML
 
 );
 
 }
-
 
 
 
 function loadEmployees(){
 
-let savedData =
+let data =
 localStorage.getItem(
-"employeeTable"
+"employeeData"
 );
 
-if(savedData){
+if(data){
 
-tableBody.innerHTML =
-savedData;
-
-}
+employeeTable.innerHTML =
+data;
 
 }
 
+}
 
 loadEmployees();
 
-
-
-
 // ======================================
-// SAVE AFTER ADD
+// DELETE EMPLOYEE
 // ======================================
 
-if(saveButton){
+document.addEventListener(
+"click",(e)=>{
 
-saveButton.addEventListener(
-"click",()=>{
+if(
+e.target.classList.contains(
+"delete-btn"
+)
+){
+
+let confirmDelete =
+confirm(
+"Delete this employee?"
+);
+
+if(confirmDelete){
+
+e.target
+.parentElement
+.parentElement
+.remove();
 
 saveEmployees();
 
-});
+updateStatistics();
 
 }
 
+}
+
+});
 
 
 
-// ======================================
-// EMPLOYEE MODULE READY
-// ======================================
-
-console.log(
-
-"NEXORA Employee Module Ready"
-
-);
 
 // ======================================
-// VIEW EMPLOYEE MODAL
+// VIEW MODAL
 // ======================================
 
 const viewModal =
@@ -568,57 +400,35 @@ e.target
 .parentElement;
 
 
-// GET DATA
-
-let employeeID =
-row.cells[0].innerText;
-
-let employeeName =
-row.cells[1].innerText;
-
-let department =
-row.cells[2].innerText;
-
-let position =
-row.cells[3].innerText;
-
-let status =
-row.cells[4].innerText;
-
-
-// DISPLAY DATA
-
 document.getElementById(
 "employee-id-detail"
 ).innerHTML =
-employeeID;
+row.cells[0].innerText;
 
 
 document.getElementById(
 "employee-name-detail"
 ).innerHTML =
-employeeName;
+row.cells[1].innerText;
 
 
 document.getElementById(
 "employee-department-detail"
 ).innerHTML =
-department;
+row.cells[2].innerText;
 
 
 document.getElementById(
 "employee-position-detail"
 ).innerHTML =
-position;
+row.cells[3].innerText;
 
 
 document.getElementById(
 "employee-status-detail"
 ).innerHTML =
-status;
+row.cells[4].innerText;
 
-
-// SHOW MODAL
 
 viewModal.style.display =
 "flex";
@@ -636,26 +446,24 @@ viewModal.style.display =
 
 if(closeViewModal){
 
-closeViewModal.addEventListener(
-"click",()=>{
+closeViewModal.onclick = ()=>{
 
 viewModal.style.display =
 "none";
 
-});
+};
 
 }
 
 
 if(closeViewButton){
 
-closeViewButton.addEventListener(
-"click",()=>{
+closeViewButton.onclick = ()=>{
 
 viewModal.style.display =
 "none";
 
-});
+};
 
 }
 
@@ -663,25 +471,7 @@ viewModal.style.display =
 
 
 // ======================================
-// CLICK OUTSIDE TO CLOSE
-// ======================================
-
-window.addEventListener(
-"click",(e)=>{
-
-if(
-e.target===viewModal
-){
-
-viewModal.style.display =
-"none";
-
-}
-
-});
-
-// ======================================
-// EDIT EMPLOYEE MODAL
+// EDIT MODAL
 // ======================================
 
 const editModal =
@@ -728,8 +518,6 @@ e.target
 .parentElement;
 
 
-// LOAD DATA
-
 document.getElementById(
 "edit-id"
 ).value =
@@ -754,18 +542,13 @@ document.getElementById(
 currentRow.cells[3].innerText;
 
 
-let status =
+document.getElementById(
+"edit-status"
+).value =
 currentRow.cells[4]
 .innerText
 .trim();
 
-document.getElementById(
-"edit-status"
-).value =
-status;
-
-
-// OPEN MODAL
 
 editModal.style.display =
 "flex";
@@ -783,8 +566,7 @@ editModal.style.display =
 
 if(updateButton){
 
-updateButton.addEventListener(
-"click",()=>{
+updateButton.onclick = ()=>{
 
 if(currentRow){
 
@@ -792,6 +574,7 @@ let status =
 document.getElementById(
 "edit-status"
 ).value;
+
 
 let statusClass =
 status==="Active"
@@ -803,9 +586,6 @@ status==="Active"
 
 "inactive-status";
 
-
-
-// UPDATE TABLE
 
 currentRow.cells[0].innerText =
 document.getElementById(
@@ -844,21 +624,16 @@ ${status}
 `;
 
 
-
-// SAVE LOCAL STORAGE
-
 saveEmployees();
 
-
-
-// CLOSE MODAL
+updateStatistics();
 
 editModal.style.display =
 "none";
 
 }
 
-});
+};
 
 }
 
@@ -871,26 +646,142 @@ editModal.style.display =
 
 if(closeEditModal){
 
-closeEditModal.addEventListener(
-"click",()=>{
+closeEditModal.onclick = ()=>{
 
 editModal.style.display =
 "none";
 
-});
+};
 
 }
 
 
 if(cancelEditButton){
 
-cancelEditButton.addEventListener(
-"click",()=>{
+cancelEditButton.onclick = ()=>{
 
 editModal.style.display =
 "none";
 
+};
+
+}
+
+// ======================================
+// EMPLOYEE STATISTICS
+// ======================================
+
+function updateStatistics(){
+
+let rows =
+document.querySelectorAll(
+".employee-table tbody tr"
+);
+
+let total =
+rows.length;
+
+let active = 0;
+
+let inactive = 0;
+
+let departmentList = [];
+
+rows.forEach((row)=>{
+
+let department =
+row.cells[2]
+.innerText
+.trim();
+
+let status =
+row.cells[4]
+.innerText
+.trim();
+
+
+if(
+status==="Active"
+){
+
+active++;
+
+}
+else{
+
+inactive++;
+
+}
+
+
+if(
+!departmentList.includes(
+department
+)
+){
+
+departmentList.push(
+department
+);
+
+}
+
 });
+
+
+
+let totalCard =
+document.getElementById(
+"totalEmployeeCount"
+);
+
+let activeCard =
+document.getElementById(
+"activeEmployeeCount"
+);
+
+let inactiveCard =
+document.getElementById(
+"inactiveEmployeeCount"
+);
+
+let departmentCard =
+document.getElementById(
+"departmentCount"
+);
+
+
+
+if(totalCard){
+
+totalCard.innerHTML =
+total;
+
+}
+
+
+if(activeCard){
+
+activeCard.innerHTML =
+active;
+
+}
+
+
+if(inactiveCard){
+
+inactiveCard.innerHTML =
+inactive;
+
+}
+
+
+if(departmentCard){
+
+departmentCard.innerHTML =
+departmentList.length;
+
+}
 
 }
 
@@ -898,11 +789,31 @@ editModal.style.display =
 
 
 // ======================================
-// CLICK OUTSIDE TO CLOSE
+// CLICK OUTSIDE MODAL
 // ======================================
 
 window.addEventListener(
 "click",(e)=>{
+
+if(
+e.target===addModal
+){
+
+addModal.style.display =
+"none";
+
+}
+
+
+if(
+e.target===viewModal
+){
+
+viewModal.style.display =
+"none";
+
+}
+
 
 if(
 e.target===editModal
@@ -914,3 +825,25 @@ editModal.style.display =
 }
 
 });
+
+
+
+
+// ======================================
+// INITIALIZE
+// ======================================
+
+updateStatistics();
+
+
+
+
+// ======================================
+// MODULE READY
+// ======================================
+
+console.log(
+
+"NEXORA Employee Module Ready"
+
+);
