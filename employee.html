@@ -28,6 +28,7 @@
 
 <div class="container">
 
+
     <!-- SIDEBAR -->
 
     <aside class="sidebar">
@@ -50,6 +51,7 @@
 
             </li>
 
+
             <li class="active">
 
                 <i class="fa-solid fa-users"></i>
@@ -57,6 +59,7 @@
                 Employee Management
 
             </li>
+
 
             <li>
 
@@ -66,6 +69,7 @@
 
             </li>
 
+
             <li>
 
                 <i class="fa-solid fa-calendar-days"></i>
@@ -73,6 +77,7 @@
                 Off Day Planner
 
             </li>
+
 
             <li>
 
@@ -82,6 +87,7 @@
 
             </li>
 
+
             <li>
 
                 <i class="fa-solid fa-money-bill-wave"></i>
@@ -89,6 +95,7 @@
                 Payroll
 
             </li>
+
 
             <li>
 
@@ -98,6 +105,7 @@
 
             </li>
 
+
             <li>
 
                 <i class="fa-solid fa-chart-column"></i>
@@ -106,19 +114,12 @@
 
             </li>
 
+
             <li>
 
                 <i class="fa-solid fa-gear"></i>
 
                 Settings
-
-            </li>
-
-            <li onclick="logout()">
-
-                <i class="fa-solid fa-right-from-bracket"></i>
-
-                Logout
 
             </li>
 
@@ -133,82 +134,7 @@
     <main class="main">
 
 
-        <!-- HEADER -->
-
-        <section class="header">
-
-            <div class="search-box">
-
-                <i class="fa-solid fa-magnifying-glass"></i>
-
-                <input
-                type="text"
-                id="searchEmployee"
-                placeholder="Search employee...">
-
-            </div>
-
-
-            <div class="header-right">
-
-                <div class="notification">
-
-                    <i class="fa-solid fa-bell"></i>
-
-                    <span>3</span>
-
-                </div>
-
-
-                <div class="dark-mode">
-
-                    <i class="fa-solid fa-moon"></i>
-
-                </div>
-
-
-                <div
-                class="clock"
-                id="clock">
-
-                    00:00:00
-
-                </div>
-
-
-                <div class="profile">
-
-                    <div class="avatar">
-
-                        A
-
-                    </div>
-
-                    <div class="profile-info">
-
-                        <h4>
-
-                            Administrator
-
-                        </h4>
-
-                        <span>
-
-                            HR Manager
-
-                        </span>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- TITLE -->
+        <!-- PAGE TITLE -->
 
         <section class="greeting">
 
@@ -285,8 +211,6 @@
 
         </section>
 
-
-
         <!-- EMPLOYEE PANEL -->
 
         <section class="panel">
@@ -299,13 +223,22 @@
 
                 </h3>
 
-                <button class="add-btn">
+                <div class="header-action">
 
-                    <i class="fa-solid fa-plus"></i>
+                    <input
+                    type="text"
+                    id="searchEmployee"
+                    placeholder="Search employee...">
 
-                    Add Employee
+                    <button class="add-btn">
 
-                </button>
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Employee
+
+                    </button>
+
+                </div>
 
             </div>
 
@@ -335,6 +268,7 @@
 
                     </thead>
 
+
                     <tbody>
 
                     </tbody>
@@ -343,38 +277,9 @@
 
             </div>
 
-
-            <!-- PAGINATION -->
-
-            <div class="pagination">
-
-                <button>
-
-                    Previous
-
-                </button>
-
-                <button class="page-active">
-
-                    1
-
-                </button>
-
-                <button>
-
-                    Next
-
-                </button>
-
-            </div>
-
         </section>
 
-
-
-        <!-- ADD EMPLOYEE MODAL -->
-
-        <div class="modal">
+            <div class="modal">
 
             <div class="modal-content">
 
@@ -401,8 +306,7 @@
 
                     <input
                     type="text"
-                    id="employeeID"
-                    placeholder="Employee ID">
+                    id="employeeID">
 
                 </div>
 
@@ -417,8 +321,7 @@
 
                     <input
                     type="text"
-                    id="employeeName"
-                    placeholder="Full Name">
+                    id="employeeName">
 
                 </div>
 
@@ -433,8 +336,7 @@
 
                     <input
                     type="text"
-                    id="department"
-                    placeholder="Department">
+                    id="department">
 
                 </div>
 
@@ -449,8 +351,7 @@
 
                     <input
                     type="text"
-                    id="position"
-                    placeholder="Position">
+                    id="position">
 
                 </div>
 
@@ -501,8 +402,6 @@
             </div>
 
         </div>
-
-
 
         <!-- VIEW MODAL -->
 
@@ -617,6 +516,7 @@
             </div>
 
         </div>
+
 
 
 
@@ -749,6 +649,7 @@
     </main>
 
 </div>
+
 
 <script src="js/session.js"></script>
 
