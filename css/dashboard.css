@@ -40,6 +40,8 @@ body{
 
     overflow-y:auto;
 
+    transition:0.3s;
+
 }
 
 .logo{
@@ -120,6 +122,8 @@ body{
     flex-direction:column;
 
     gap:25px;
+
+    transition:0.3s;
 
 }
 
