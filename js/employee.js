@@ -679,3 +679,238 @@ viewModal.style.display =
 }
 
 });
+
+// ======================================
+// EDIT EMPLOYEE MODAL
+// ======================================
+
+const editModal =
+document.querySelector(
+".edit-modal"
+);
+
+const closeEditModal =
+document.querySelector(
+".close-edit-modal"
+);
+
+const cancelEditButton =
+document.querySelector(
+".cancel-edit-btn"
+);
+
+const updateButton =
+document.querySelector(
+".update-btn"
+);
+
+let currentRow = null;
+
+
+
+
+// ======================================
+// OPEN EDIT MODAL
+// ======================================
+
+document.addEventListener(
+"click",(e)=>{
+
+if(
+e.target.classList.contains(
+"edit-btn"
+)
+){
+
+currentRow =
+e.target
+.parentElement
+.parentElement;
+
+
+// LOAD DATA
+
+document.getElementById(
+"edit-id"
+).value =
+currentRow.cells[0].innerText;
+
+
+document.getElementById(
+"edit-name"
+).value =
+currentRow.cells[1].innerText;
+
+
+document.getElementById(
+"edit-department"
+).value =
+currentRow.cells[2].innerText;
+
+
+document.getElementById(
+"edit-position"
+).value =
+currentRow.cells[3].innerText;
+
+
+let status =
+currentRow.cells[4]
+.innerText
+.trim();
+
+document.getElementById(
+"edit-status"
+).value =
+status;
+
+
+// OPEN MODAL
+
+editModal.style.display =
+"flex";
+
+}
+
+});
+
+
+
+
+// ======================================
+// UPDATE EMPLOYEE
+// ======================================
+
+if(updateButton){
+
+updateButton.addEventListener(
+"click",()=>{
+
+if(currentRow){
+
+let status =
+document.getElementById(
+"edit-status"
+).value;
+
+let statusClass =
+status==="Active"
+?
+
+"active-status"
+
+:
+
+"inactive-status";
+
+
+
+// UPDATE TABLE
+
+currentRow.cells[0].innerText =
+document.getElementById(
+"edit-id"
+).value;
+
+
+currentRow.cells[1].innerText =
+document.getElementById(
+"edit-name"
+).value;
+
+
+currentRow.cells[2].innerText =
+document.getElementById(
+"edit-department"
+).value;
+
+
+currentRow.cells[3].innerText =
+document.getElementById(
+"edit-position"
+).value;
+
+
+currentRow.cells[4].innerHTML =
+
+`
+
+<span class="status ${statusClass}">
+
+${status}
+
+</span>
+
+`;
+
+
+
+// SAVE LOCAL STORAGE
+
+saveEmployees();
+
+
+
+// CLOSE MODAL
+
+editModal.style.display =
+"none";
+
+}
+
+});
+
+}
+
+
+
+
+// ======================================
+// CLOSE EDIT MODAL
+// ======================================
+
+if(closeEditModal){
+
+closeEditModal.addEventListener(
+"click",()=>{
+
+editModal.style.display =
+"none";
+
+});
+
+}
+
+
+if(cancelEditButton){
+
+cancelEditButton.addEventListener(
+"click",()=>{
+
+editModal.style.display =
+"none";
+
+});
+
+}
+
+
+
+
+// ======================================
+// CLICK OUTSIDE TO CLOSE
+// ======================================
+
+window.addEventListener(
+"click",(e)=>{
+
+if(
+e.target===editModal
+){
+
+editModal.style.display =
+"none";
+
+}
+
+});
