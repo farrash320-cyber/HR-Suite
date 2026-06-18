@@ -526,3 +526,156 @@ console.log(
 "NEXORA Employee Module Ready"
 
 );
+
+// ======================================
+// VIEW EMPLOYEE MODAL
+// ======================================
+
+const viewModal =
+document.querySelector(
+".view-modal"
+);
+
+const closeViewModal =
+document.querySelector(
+".close-view-modal"
+);
+
+const closeViewButton =
+document.querySelector(
+".close-view-btn"
+);
+
+
+
+
+// ======================================
+// OPEN VIEW MODAL
+// ======================================
+
+document.addEventListener(
+"click",(e)=>{
+
+if(
+e.target.classList.contains(
+"view-btn"
+)
+){
+
+let row =
+e.target
+.parentElement
+.parentElement;
+
+
+// GET DATA
+
+let employeeID =
+row.cells[0].innerText;
+
+let employeeName =
+row.cells[1].innerText;
+
+let department =
+row.cells[2].innerText;
+
+let position =
+row.cells[3].innerText;
+
+let status =
+row.cells[4].innerText;
+
+
+// DISPLAY DATA
+
+document.getElementById(
+"employee-id-detail"
+).innerHTML =
+employeeID;
+
+
+document.getElementById(
+"employee-name-detail"
+).innerHTML =
+employeeName;
+
+
+document.getElementById(
+"employee-department-detail"
+).innerHTML =
+department;
+
+
+document.getElementById(
+"employee-position-detail"
+).innerHTML =
+position;
+
+
+document.getElementById(
+"employee-status-detail"
+).innerHTML =
+status;
+
+
+// SHOW MODAL
+
+viewModal.style.display =
+"flex";
+
+}
+
+});
+
+
+
+
+// ======================================
+// CLOSE VIEW MODAL
+// ======================================
+
+if(closeViewModal){
+
+closeViewModal.addEventListener(
+"click",()=>{
+
+viewModal.style.display =
+"none";
+
+});
+
+}
+
+
+if(closeViewButton){
+
+closeViewButton.addEventListener(
+"click",()=>{
+
+viewModal.style.display =
+"none";
+
+});
+
+}
+
+
+
+
+// ======================================
+// CLICK OUTSIDE TO CLOSE
+// ======================================
+
+window.addEventListener(
+"click",(e)=>{
+
+if(
+e.target===viewModal
+){
+
+viewModal.style.display =
+"none";
+
+}
+
+});
