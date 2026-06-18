@@ -852,3 +852,66 @@ body.dark-theme .edit-modal-content{
     background:#1e293b;
 
 }
+
+/* =========================
+   EDIT BUTTONS
+========================= */
+
+.update-btn,
+.cancel-edit-btn{
+
+    flex:1;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+
+/* UPDATE */
+
+.update-btn{
+
+    background:#22c55e;
+
+    color:white;
+
+}
+
+.update-btn:hover{
+
+    background:#16a34a;
+
+    transform:translateY(-3px);
+
+}
+
+
+/* CANCEL */
+
+.cancel-edit-btn{
+
+    background:#ef4444;
+
+    color:white;
+
+}
+
+.cancel-edit-btn:hover{
+
+    background:#dc2626;
+
+    transform:translateY(-3px);
+
+}
