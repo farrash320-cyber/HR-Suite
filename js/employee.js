@@ -5,6 +5,7 @@
 protectPage();
 
 
+
 // ======================================
 // ELEMENT
 // ======================================
@@ -13,6 +14,17 @@ const employeeTable =
 document.querySelector(
 ".employee-table tbody"
 );
+
+const searchBox =
+document.querySelector(
+".search-box input"
+);
+
+
+
+// ======================================
+// ADD MODAL
+// ======================================
 
 const addModal =
 document.querySelector(
@@ -24,12 +36,12 @@ document.querySelector(
 ".add-btn"
 );
 
-const closeButton =
+const closeAddButton =
 document.querySelector(
 ".close-modal"
 );
 
-const cancelButton =
+const cancelAddButton =
 document.querySelector(
 ".cancel-btn"
 );
@@ -39,16 +51,11 @@ document.querySelector(
 ".save-btn"
 );
 
-const searchInput =
-document.querySelector(
-".search-box input"
-);
-
 
 
 
 // ======================================
-// OPEN MODAL
+// OPEN ADD MODAL
 // ======================================
 
 if(addButton){
@@ -66,12 +73,12 @@ addModal.style.display =
 
 
 // ======================================
-// CLOSE MODAL
+// CLOSE ADD MODAL
 // ======================================
 
-if(closeButton){
+if(closeAddButton){
 
-closeButton.onclick = ()=>{
+closeAddButton.onclick = ()=>{
 
 addModal.style.display =
 "none";
@@ -81,9 +88,9 @@ addModal.style.display =
 }
 
 
-if(cancelButton){
+if(cancelAddButton){
 
-cancelButton.onclick = ()=>{
+cancelAddButton.onclick = ()=>{
 
 addModal.style.display =
 "none";
@@ -128,6 +135,7 @@ inputs[2].value;
 let status =
 selects[1].value;
 
+
 if(
 
 employeeID==="" ||
@@ -147,6 +155,7 @@ return;
 }
 
 
+
 let statusClass =
 status==="Active"
 ?
@@ -156,6 +165,7 @@ status==="Active"
 :
 
 "inactive-status";
+
 
 
 let row =
@@ -213,12 +223,10 @@ employeeTable.appendChild(
 row
 );
 
+
 saveEmployees();
 
 updateStatistics();
-
-addModal.style.display =
-"none";
 
 
 inputs[0].value = "";
@@ -226,6 +234,281 @@ inputs[0].value = "";
 inputs[1].value = "";
 
 inputs[2].value = "";
+
+
+addModal.style.display =
+"none";
+
+};
+
+}
+
+// ======================================
+// VIEW MODAL
+// ======================================
+
+const viewModal =
+document.querySelector(
+".view-modal"
+);
+
+const closeViewButton =
+document.querySelector(
+".close-view-btn"
+);
+
+const closeViewIcon =
+document.querySelector(
+".close-view-modal"
+);
+
+
+
+
+// ======================================
+// EDIT MODAL
+// ======================================
+
+const editModal =
+document.querySelector(
+".edit-modal"
+);
+
+const updateButton =
+document.querySelector(
+".update-btn"
+);
+
+const cancelEditButton =
+document.querySelector(
+".cancel-edit-btn"
+);
+
+const closeEditButton =
+document.querySelector(
+".close-edit-modal"
+);
+
+let currentRow = null;
+
+
+
+
+// ======================================
+// TABLE BUTTON EVENT
+// ======================================
+
+document.addEventListener(
+"click",(e)=>{
+
+// DELETE
+
+if(
+e.target.classList.contains(
+"delete-btn"
+)
+){
+
+let confirmDelete =
+confirm(
+"Delete this employee?"
+);
+
+if(confirmDelete){
+
+e.target
+.parentElement
+.parentElement
+.remove();
+
+saveEmployees();
+
+updateStatistics();
+
+}
+
+}
+
+
+
+// VIEW
+
+if(
+e.target.classList.contains(
+"view-btn"
+)
+){
+
+let row =
+e.target
+.parentElement
+.parentElement;
+
+
+document.getElementById(
+"employee-id-detail"
+).innerHTML =
+row.cells[0].innerText;
+
+
+document.getElementById(
+"employee-name-detail"
+).innerHTML =
+row.cells[1].innerText;
+
+
+document.getElementById(
+"employee-department-detail"
+).innerHTML =
+row.cells[2].innerText;
+
+
+document.getElementById(
+"employee-position-detail"
+).innerHTML =
+row.cells[3].innerText;
+
+
+document.getElementById(
+"employee-status-detail"
+).innerHTML =
+row.cells[4].innerText;
+
+
+viewModal.style.display =
+"flex";
+
+}
+
+
+
+// EDIT
+
+if(
+e.target.classList.contains(
+"edit-btn"
+)
+){
+
+currentRow =
+e.target
+.parentElement
+.parentElement;
+
+
+document.getElementById(
+"edit-id"
+).value =
+currentRow.cells[0].innerText;
+
+
+document.getElementById(
+"edit-name"
+).value =
+currentRow.cells[1].innerText;
+
+
+document.getElementById(
+"edit-department"
+).value =
+currentRow.cells[2].innerText;
+
+
+document.getElementById(
+"edit-position"
+).value =
+currentRow.cells[3].innerText;
+
+
+document.getElementById(
+"edit-status"
+).value =
+currentRow.cells[4]
+.innerText
+.trim();
+
+
+editModal.style.display =
+"flex";
+
+}
+
+});
+
+// ======================================
+// UPDATE EMPLOYEE
+// ======================================
+
+if(updateButton){
+
+updateButton.onclick = ()=>{
+
+if(currentRow){
+
+let status =
+document.getElementById(
+"edit-status"
+).value;
+
+
+let statusClass =
+status==="Active"
+?
+
+"active-status"
+
+:
+
+"inactive-status";
+
+
+
+currentRow.cells[0].innerText =
+document.getElementById(
+"edit-id"
+).value;
+
+
+currentRow.cells[1].innerText =
+document.getElementById(
+"edit-name"
+).value;
+
+
+currentRow.cells[2].innerText =
+document.getElementById(
+"edit-department"
+).value;
+
+
+currentRow.cells[3].innerText =
+document.getElementById(
+"edit-position"
+).value;
+
+
+currentRow.cells[4].innerHTML =
+
+`
+
+<span class="status ${statusClass}">
+
+${status}
+
+</span>
+
+`;
+
+
+saveEmployees();
+
+updateStatistics();
+
+
+editModal.style.display =
+"none";
+
+}
 
 };
 
@@ -238,13 +521,13 @@ inputs[2].value = "";
 // SEARCH EMPLOYEE
 // ======================================
 
-if(searchInput){
+if(searchBox){
 
-searchInput.addEventListener(
+searchBox.addEventListener(
 "keyup",()=>{
 
 let keyword =
-searchInput.value
+searchBox.value
 .toLowerCase();
 
 let rows =
@@ -305,370 +588,25 @@ employeeTable.innerHTML
 
 function loadEmployees(){
 
-let data =
+let savedData =
 localStorage.getItem(
 "employeeData"
 );
 
-if(data){
+if(savedData){
 
 employeeTable.innerHTML =
-data;
+savedData;
 
 }
 
 }
 
-loadEmployees();
-
-// ======================================
-// DELETE EMPLOYEE
-// ======================================
-
-document.addEventListener(
-"click",(e)=>{
-
-if(
-e.target.classList.contains(
-"delete-btn"
-)
-){
-
-let confirmDelete =
-confirm(
-"Delete this employee?"
-);
-
-if(confirmDelete){
-
-e.target
-.parentElement
-.parentElement
-.remove();
-
-saveEmployees();
-
-updateStatistics();
-
-}
-
-}
-
-});
-
 
 
 
 // ======================================
-// VIEW MODAL
-// ======================================
-
-const viewModal =
-document.querySelector(
-".view-modal"
-);
-
-const closeViewModal =
-document.querySelector(
-".close-view-modal"
-);
-
-const closeViewButton =
-document.querySelector(
-".close-view-btn"
-);
-
-
-
-
-// ======================================
-// OPEN VIEW MODAL
-// ======================================
-
-document.addEventListener(
-"click",(e)=>{
-
-if(
-e.target.classList.contains(
-"view-btn"
-)
-){
-
-let row =
-e.target
-.parentElement
-.parentElement;
-
-
-document.getElementById(
-"employee-id-detail"
-).innerHTML =
-row.cells[0].innerText;
-
-
-document.getElementById(
-"employee-name-detail"
-).innerHTML =
-row.cells[1].innerText;
-
-
-document.getElementById(
-"employee-department-detail"
-).innerHTML =
-row.cells[2].innerText;
-
-
-document.getElementById(
-"employee-position-detail"
-).innerHTML =
-row.cells[3].innerText;
-
-
-document.getElementById(
-"employee-status-detail"
-).innerHTML =
-row.cells[4].innerText;
-
-
-viewModal.style.display =
-"flex";
-
-}
-
-});
-
-
-
-
-// ======================================
-// CLOSE VIEW MODAL
-// ======================================
-
-if(closeViewModal){
-
-closeViewModal.onclick = ()=>{
-
-viewModal.style.display =
-"none";
-
-};
-
-}
-
-
-if(closeViewButton){
-
-closeViewButton.onclick = ()=>{
-
-viewModal.style.display =
-"none";
-
-};
-
-}
-
-
-
-
-// ======================================
-// EDIT MODAL
-// ======================================
-
-const editModal =
-document.querySelector(
-".edit-modal"
-);
-
-const closeEditModal =
-document.querySelector(
-".close-edit-modal"
-);
-
-const cancelEditButton =
-document.querySelector(
-".cancel-edit-btn"
-);
-
-const updateButton =
-document.querySelector(
-".update-btn"
-);
-
-let currentRow = null;
-
-
-
-
-// ======================================
-// OPEN EDIT MODAL
-// ======================================
-
-document.addEventListener(
-"click",(e)=>{
-
-if(
-e.target.classList.contains(
-"edit-btn"
-)
-){
-
-currentRow =
-e.target
-.parentElement
-.parentElement;
-
-
-document.getElementById(
-"edit-id"
-).value =
-currentRow.cells[0].innerText;
-
-
-document.getElementById(
-"edit-name"
-).value =
-currentRow.cells[1].innerText;
-
-
-document.getElementById(
-"edit-department"
-).value =
-currentRow.cells[2].innerText;
-
-
-document.getElementById(
-"edit-position"
-).value =
-currentRow.cells[3].innerText;
-
-
-document.getElementById(
-"edit-status"
-).value =
-currentRow.cells[4]
-.innerText
-.trim();
-
-
-editModal.style.display =
-"flex";
-
-}
-
-});
-
-
-
-
-// ======================================
-// UPDATE EMPLOYEE
-// ======================================
-
-if(updateButton){
-
-updateButton.onclick = ()=>{
-
-if(currentRow){
-
-let status =
-document.getElementById(
-"edit-status"
-).value;
-
-
-let statusClass =
-status==="Active"
-?
-
-"active-status"
-
-:
-
-"inactive-status";
-
-
-currentRow.cells[0].innerText =
-document.getElementById(
-"edit-id"
-).value;
-
-
-currentRow.cells[1].innerText =
-document.getElementById(
-"edit-name"
-).value;
-
-
-currentRow.cells[2].innerText =
-document.getElementById(
-"edit-department"
-).value;
-
-
-currentRow.cells[3].innerText =
-document.getElementById(
-"edit-position"
-).value;
-
-
-currentRow.cells[4].innerHTML =
-
-`
-
-<span class="status ${statusClass}">
-
-${status}
-
-</span>
-
-`;
-
-
-saveEmployees();
-
-updateStatistics();
-
-editModal.style.display =
-"none";
-
-}
-
-};
-
-}
-
-
-
-
-// ======================================
-// CLOSE EDIT MODAL
-// ======================================
-
-if(closeEditModal){
-
-closeEditModal.onclick = ()=>{
-
-editModal.style.display =
-"none";
-
-};
-
-}
-
-
-if(cancelEditButton){
-
-cancelEditButton.onclick = ()=>{
-
-editModal.style.display =
-"none";
-
-};
-
-}
-
-// ======================================
-// EMPLOYEE STATISTICS
+// STATISTICS
 // ======================================
 
 function updateStatistics(){
@@ -686,6 +624,7 @@ let active = 0;
 let inactive = 0;
 
 let departmentList = [];
+
 
 rows.forEach((row)=>{
 
@@ -751,7 +690,6 @@ document.getElementById(
 );
 
 
-
 if(totalCard){
 
 totalCard.innerHTML =
@@ -789,11 +727,64 @@ departmentList.length;
 
 
 // ======================================
+// CLOSE MODALS
+// ======================================
+
+if(closeViewButton){
+
+closeViewButton.onclick = ()=>{
+
+viewModal.style.display =
+"none";
+
+};
+
+}
+
+
+if(closeViewIcon){
+
+closeViewIcon.onclick = ()=>{
+
+viewModal.style.display =
+"none";
+
+};
+
+}
+
+
+if(cancelEditButton){
+
+cancelEditButton.onclick = ()=>{
+
+editModal.style.display =
+"none";
+
+};
+
+}
+
+
+if(closeEditButton){
+
+closeEditButton.onclick = ()=>{
+
+editModal.style.display =
+"none";
+
+};
+
+}
+
+
+
+
+// ======================================
 // CLICK OUTSIDE MODAL
 // ======================================
 
-window.addEventListener(
-"click",(e)=>{
+window.onclick = (e)=>{
 
 if(
 e.target===addModal
@@ -824,7 +815,7 @@ editModal.style.display =
 
 }
 
-});
+};
 
 
 
@@ -832,6 +823,8 @@ editModal.style.display =
 // ======================================
 // INITIALIZE
 // ======================================
+
+loadEmployees();
 
 updateStatistics();
 
