@@ -3,7 +3,9 @@
 ========================= */
 
 body{
+
     background:#f1f5f9;
+
 }
 
 
@@ -12,7 +14,9 @@ body{
 ========================= */
 
 .container{
+
     display:flex;
+
 }
 
 
@@ -32,15 +36,15 @@ body{
 
     position:fixed;
 
-    left:0;
-
     top:0;
+
+    left:0;
 
     padding:30px 20px;
 
     overflow-y:auto;
 
-    transition:0.3s;
+    transition:.3s;
 
 }
 
@@ -52,7 +56,7 @@ body{
 
 .logo h1{
 
-    font-size:40px;
+    font-size:38px;
 
     letter-spacing:3px;
 
@@ -65,6 +69,11 @@ body{
     font-size:14px;
 
 }
+
+
+/* =========================
+   SIDEBAR MENU
+========================= */
 
 .sidebar ul{
 
@@ -123,7 +132,7 @@ body{
 
     gap:25px;
 
-    transition:0.3s;
+    transition:.3s;
 
 }
 
@@ -143,11 +152,13 @@ body{
 }
 
 
-/* SEARCH */
+/* =========================
+   SEARCH BOX
+========================= */
 
 .search-box{
 
-    width:380px;
+    width:400px;
 
     background:white;
 
@@ -162,7 +173,14 @@ body{
     gap:15px;
 
     box-shadow:
+
     0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.search-box i{
+
+    color:gray;
 
 }
 
@@ -174,10 +192,14 @@ body{
 
     outline:none;
 
+    background:none;
+
 }
 
 
-/* RIGHT HEADER */
+/* =========================
+   HEADER RIGHT
+========================= */
 
 .header-right{
 
@@ -190,7 +212,9 @@ body{
 }
 
 
-/* NOTIFICATION */
+/* =========================
+   NOTIFICATION
+========================= */
 
 .notification{
 
@@ -210,7 +234,10 @@ body{
 
     position:relative;
 
+    cursor:pointer;
+
     box-shadow:
+
     0 8px 20px rgba(0,0,0,.08);
 
 }
@@ -244,7 +271,9 @@ body{
 }
 
 
-/* DARK MODE */
+/* =========================
+   DARK MODE
+========================= */
 
 .dark-mode{
 
@@ -265,12 +294,15 @@ body{
     cursor:pointer;
 
     box-shadow:
+
     0 8px 20px rgba(0,0,0,.08);
 
 }
 
 
-/* CLOCK */
+/* =========================
+   CLOCK
+========================= */
 
 .clock{
 
@@ -281,12 +313,15 @@ body{
     border-radius:20px;
 
     box-shadow:
+
     0 8px 20px rgba(0,0,0,.08);
 
 }
 
 
-/* PROFILE */
+/* =========================
+   PROFILE
+========================= */
 
 .profile{
 
@@ -295,6 +330,8 @@ body{
     align-items:center;
 
     gap:15px;
+
+    cursor:pointer;
 
 }
 
@@ -320,6 +357,20 @@ body{
 
 }
 
+.profile h4{
+
+    color:#0f172a;
+
+}
+
+.profile span{
+
+    color:gray;
+
+    font-size:14px;
+
+}
+
 /* =========================
    GREETING
 ========================= */
@@ -333,6 +384,7 @@ body{
     border-radius:25px;
 
     box-shadow:
+
     0 8px 25px rgba(0,0,0,.08);
 
 }
@@ -353,7 +405,7 @@ body{
 
 
 /* =========================
-   CARDS
+   STATISTICS CARD
 ========================= */
 
 .cards{
@@ -361,6 +413,7 @@ body{
     display:grid;
 
     grid-template-columns:
+
     repeat(4,1fr);
 
     gap:25px;
@@ -376,6 +429,7 @@ body{
     border-radius:25px;
 
     box-shadow:
+
     0 8px 25px rgba(0,0,0,.08);
 
     transition:.3s;
@@ -416,6 +470,7 @@ body{
     display:grid;
 
     grid-template-columns:
+
     repeat(2,1fr);
 
     gap:25px;
@@ -436,6 +491,7 @@ body{
     border-radius:25px;
 
     box-shadow:
+
     0 8px 25px rgba(0,0,0,.08);
 
     transition:.3s;
@@ -467,6 +523,7 @@ body{
     padding:16px 0;
 
     border-bottom:
+
     1px solid #e5e7eb;
 
     color:#475569;
@@ -494,7 +551,349 @@ body{
 
     width:100% !important;
 
-    max-height:350px;
+    height:350px !important;
+
+}
+
+
+/* =========================
+   PANEL TABLE
+========================= */
+
+.panel table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.panel th{
+
+    padding:15px;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-align:left;
+
+}
+
+.panel td{
+
+    padding:15px;
+
+    border-bottom:
+
+    1px solid #e5e7eb;
+
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status{
+
+    padding:8px 15px;
+
+    border-radius:20px;
+
+    color:white;
+
+    font-size:13px;
+
+}
+
+.active-status{
+
+    background:#22c55e;
+
+}
+
+.inactive-status{
+
+    background:#ef4444;
+
+}
+
+/* =========================
+   QUICK ACTION
+========================= */
+
+.quick-action{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:15px;
+
+}
+
+.quick-action button{
+
+    border:none;
+
+    background:#2563eb;
+
+    color:white;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.quick-action button:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
+
+
+/* =========================
+   CALENDAR
+========================= */
+
+.month{
+
+    text-align:center;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    margin-bottom:25px;
+
+}
+
+.weekdays{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(7,1fr);
+
+    text-align:center;
+
+    color:gray;
+
+    margin-bottom:15px;
+
+}
+
+.days{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(7,1fr);
+
+    gap:10px;
+
+}
+
+.days div{
+
+    height:40px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:.3s;
+
+}
+
+.days div:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+
+/* =========================
+   ATTENDANCE OVERVIEW
+========================= */
+
+.overview{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.overview-card{
+
+    background:#f8fafc;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    text-align:center;
+
+}
+
+.overview-card h2{
+
+    color:#2563eb;
+
+    margin-bottom:10px;
+
+}
+
+.overview-card span{
+
+    color:gray;
+
+}
+
+
+/* =========================
+   NOTIFICATION PANEL
+========================= */
+
+.notification{
+
+    position:relative;
+
+}
+
+.notification-panel{
+
+    position:absolute;
+
+    top:70px;
+
+    right:0;
+
+    width:300px;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    display:none;
+
+    z-index:9999;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.1);
+
+}
+
+.notification-panel h3{
+
+    padding:20px;
+
+    color:#0f172a;
+
+}
+
+.notification-panel div{
+
+    padding:18px 20px;
+
+    border-top:
+
+    1px solid #e5e7eb;
+
+    transition:.3s;
+
+}
+
+.notification-panel div:hover{
+
+    background:#f8fafc;
+
+}
+
+
+/* =========================
+   PROFILE DROPDOWN
+========================= */
+
+.profile{
+
+    position:relative;
+
+}
+
+.profile-info{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.dropdown-menu{
+
+    position:absolute;
+
+    top:75px;
+
+    right:0;
+
+    width:230px;
+
+    background:white;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    display:none;
+
+    z-index:9999;
+
+    box-shadow:
+
+    0 10px 30px rgba(0,0,0,.1);
+
+}
+
+.dropdown-menu div{
+
+    padding:18px;
+
+    transition:.3s;
+
+}
+
+.dropdown-menu div:hover{
+
+    background:#f8fafc;
+
+}
+
+.dropdown-menu i{
+
+    width:30px;
 
 }
 
@@ -514,15 +913,22 @@ body.dark-theme .panel,
 body.dark-theme .search-box,
 body.dark-theme .notification,
 body.dark-theme .dark-mode,
-body.dark-theme .clock{
+body.dark-theme .clock,
+body.dark-theme .notification-panel,
+body.dark-theme .dropdown-menu{
 
     background:#1e293b;
 
 }
 
+
+/* TEXT */
+
 body.dark-theme .greeting h2,
 body.dark-theme .card h1,
-body.dark-theme .panel h3{
+body.dark-theme .panel h3,
+body.dark-theme .notification-panel h3,
+body.dark-theme .profile h4{
 
     color:white;
 
@@ -530,22 +936,14 @@ body.dark-theme .panel h3{
 
 body.dark-theme .greeting p,
 body.dark-theme .card h3,
-body.dark-theme .panel li{
+body.dark-theme .panel li,
+body.dark-theme .profile span{
 
     color:#cbd5e1;
 
 }
 
-body.dark-theme .panel li{
-
-    border-bottom:
-    1px solid #334155;
-
-}
-
 body.dark-theme .search-box input{
-
-    background:none;
 
     color:white;
 
@@ -564,20 +962,78 @@ body.dark-theme .clock{
 }
 
 
+/* PANEL BORDER */
+
+body.dark-theme .panel li,
+body.dark-theme .notification-panel div{
+
+    border-color:#334155;
+
+}
+
+
+/* DROPDOWN */
+
+body.dark-theme .dropdown-menu div,
+body.dark-theme .notification-panel div{
+
+    color:white;
+
+}
+
+body.dark-theme .dropdown-menu div:hover,
+body.dark-theme .notification-panel div:hover{
+
+    background:#334155;
+
+}
+
+
+/* ATTENDANCE OVERVIEW */
+
+body.dark-theme .overview-card{
+
+    background:#334155;
+
+}
+
+body.dark-theme .overview-card span{
+
+    color:#cbd5e1;
+
+}
+
+
+/* CALENDAR */
+
+body.dark-theme .month,
+body.dark-theme .weekdays,
+body.dark-theme .days div{
+
+    color:white;
+
+}
+
+
+
 /* =========================
    TRANSITION
 ========================= */
 
+.sidebar,
+.main,
 .card,
 .panel,
-.search-box,
 .notification,
 .dark-mode,
-.clock{
+.clock,
+.search-box,
+.quick-action button{
 
     transition:.3s;
 
 }
+
 
 
 /* =========================
@@ -596,6 +1052,7 @@ body.dark-theme .clock{
 }
 
 
+
 /* =========================
    RESPONSIVE 1100px
 ========================= */
@@ -610,62 +1067,6 @@ body.dark-theme .clock{
 
 }
 
-
-/* =========================
-   RESPONSIVE 900px
-========================= */
-
-@media(max-width:900px){
-
-.sidebar{
-
-    width:100px;
-
-}
-
-.logo span{
-
-    display:none;
-
-}
-
-.logo h1{
-
-    font-size:28px;
-
-}
-
-.sidebar li{
-
-    text-align:center;
-
-    padding:18px 10px;
-
-}
-
-.sidebar li i{
-
-    display:block;
-
-    width:auto;
-
-    margin-bottom:10px;
-
-}
-
-.main{
-
-    margin-left:100px;
-
-}
-
-.profile div:last-child{
-
-    display:none;
-
-}
-
-}
 
 
 /* =========================
@@ -704,11 +1105,18 @@ body.dark-theme .clock{
 
 }
 
+.quick-action{
+
+    grid-template-columns:1fr;
+
+}
+
 }
 
 
+
 /* =========================
-   RESPONSIVE 576px
+   RESPONSIVE MOBILE
 ========================= */
 
 @media(max-width:576px){
@@ -743,254 +1151,48 @@ body.dark-theme .clock{
 
 }
 
-}
-
-/* =========================
-   DARK PROFILE
-========================= */
-
-body.dark-theme .profile h4{
-
-    color:white;
-
-}
-
-body.dark-theme .profile span{
-
-    color:#cbd5e1;
-
-}
-
-/* =========================
-   PROFILE DROPDOWN
-========================= */
-
-.dropdown-menu{
-
-    position:absolute;
-
-    top:70px;
-
-    right:0;
-
-    width:220px;
-
-    background:white;
-
-    border-radius:20px;
-
-    overflow:hidden;
+.profile-info{
 
     display:none;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.1);
-
-    z-index:9999;
-
-}
-
-
-.dropdown-menu div{
-
-    padding:18px;
-
-    transition:.3s;
-
-}
-
-.dropdown-menu div:hover{
-
-    background:#f1f5f9;
-
-}
-
-
-/* DARK MODE */
-
-body.dark-theme .dropdown-menu{
-
-    background:#1e293b;
-
-}
-
-body.dark-theme .dropdown-menu div{
-
-    color:white;
-
-}
-
-body.dark-theme .dropdown-menu div:hover{
-
-    background:#334155;
-
-}
-
-
-/* =========================
-   NOTIFICATION PANEL
-========================= */
-
-.notification{
-
-    position:relative;
-
-    cursor:pointer;
 
 }
 
 .notification-panel{
 
-    position:absolute;
+    width:260px;
 
-    top:70px;
+}
 
-    right:0;
+.dropdown-menu{
 
-    width:280px;
+    width:200px;
 
-    background:white;
+}
+
+}
+
+
+
+/* =========================
+   SCROLLBAR
+========================= */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#dbeafe;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#2563eb;
 
     border-radius:20px;
-
-    overflow:hidden;
-
-    display:none;
-
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.1);
-
-    z-index:9999;
-
-}
-
-.notification-panel h3{
-
-    padding:20px;
-
-}
-
-.notification-panel div{
-
-    padding:18px 20px;
-
-    border-top:
-    1px solid #e5e7eb;
-
-    transition:.3s;
-
-}
-
-.notification-panel div:hover{
-
-    background:#f8fafc;
-
-}
-
-
-/* DARK MODE */
-
-body.dark-theme .notification-panel{
-
-    background:#1e293b;
-
-}
-
-body.dark-theme .notification-panel h3{
-
-    color:white;
-
-}
-
-body.dark-theme .notification-panel div{
-
-    color:white;
-
-    border-color:#334155;
-
-}
-
-body.dark-theme .notification-panel div:hover{
-
-    background:#334155;
-
-}
-
-/* =========================
-   COLLAPSE BUTTON
-========================= */
-
-.collapse-btn{
-
-    width:50px;
-
-    height:50px;
-
-    background:#1e293b;
-
-    border-radius:15px;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    margin-bottom:30px;
-
-    cursor:pointer;
-
-}
-
-
-/* =========================
-   SIDEBAR COLLAPSED
-========================= */
-
-.sidebar.collapsed{
-
-    width:100px;
-
-}
-
-.sidebar.collapsed .logo span{
-
-    display:none;
-
-}
-
-.sidebar.collapsed li{
-
-    text-align:center;
-
-    padding:18px 10px;
-
-}
-
-.sidebar.collapsed li i{
-
-    display:block;
-
-    width:auto;
-
-    margin-bottom:10px;
-
-}
-
-.sidebar.collapsed li{
-
-    font-size:0;
-
-}
-
-.sidebar.collapsed li i{
-
-    font-size:16px;
-
-}
-
-.sidebar.collapsed + .main{
-
-    margin-left:100px;
 
 }
