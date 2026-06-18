@@ -134,6 +134,85 @@
     <main class="main">
 
 
+        <!-- HEADER -->
+
+        <section class="header">
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                type="text"
+                id="searchEmployee"
+                placeholder="Search employee...">
+
+            </div>
+
+
+            <div class="header-right">
+
+                <div class="notification">
+
+                    <i class="fa-solid fa-bell"></i>
+
+                    <span>
+
+                        3
+
+                    </span>
+
+                </div>
+
+
+                <div class="dark-mode">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </div>
+
+
+                <div
+                class="clock"
+                id="clock">
+
+                    00:00:00
+
+                </div>
+
+
+                <div class="profile">
+
+                    <div class="avatar">
+
+                        A
+
+                    </div>
+
+                    <div class="profile-info">
+
+                        <h4>
+
+                            Administrator
+
+                        </h4>
+
+                        <span>
+
+                            HR Manager
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
         <!-- PAGE TITLE -->
 
         <section class="greeting">
@@ -151,8 +230,6 @@
             </p>
 
         </section>
-
-
 
         <!-- STATISTICS -->
 
@@ -211,6 +288,9 @@
 
         </section>
 
+
+
+
         <!-- EMPLOYEE PANEL -->
 
         <section class="panel">
@@ -223,33 +303,15 @@
 
                 </h3>
 
-                <section class="header">
+                <button class="add-btn">
 
-    <div class="header-action">
+                    <i class="fa-solid fa-plus"></i>
 
-        <input
-        type="text"
-        id="searchEmployee"
-        placeholder="Search employee...">
+                    Add Employee
 
-        <button class="add-btn">
+                </button>
 
-            <i class="fa-solid fa-plus"></i>
-
-            Add Employee
-
-        </button>
-
-    </div>
-
-
-    <div class="dark-mode">
-
-        <i class="fa-solid fa-moon"></i>
-
-    </div>
-
-</section>
+            </div>
 
 
 
@@ -288,7 +350,9 @@
 
         </section>
 
-            <div class="modal">
+        <!-- ADD EMPLOYEE MODAL -->
+
+        <div class="modal">
 
             <div class="modal-content">
 
@@ -412,9 +476,7 @@
 
         </div>
 
-        <!-- VIEW MODAL -->
-
-        <div class="view-modal">
+            <div class="view-modal">
 
             <div class="view-modal-content">
 
@@ -433,85 +495,45 @@
 
                 <div class="detail-group">
 
-                    <label>
+                    <label>Employee ID</label>
 
-                        Employee ID
-
-                    </label>
-
-                    <p id="employee-id-detail">
-
-                        -
-
-                    </p>
+                    <p id="employee-id-detail">-</p>
 
                 </div>
 
 
                 <div class="detail-group">
 
-                    <label>
+                    <label>Full Name</label>
 
-                        Full Name
-
-                    </label>
-
-                    <p id="employee-name-detail">
-
-                        -
-
-                    </p>
+                    <p id="employee-name-detail">-</p>
 
                 </div>
 
 
                 <div class="detail-group">
 
-                    <label>
+                    <label>Department</label>
 
-                        Department
-
-                    </label>
-
-                    <p id="employee-department-detail">
-
-                        -
-
-                    </p>
+                    <p id="employee-department-detail">-</p>
 
                 </div>
 
 
                 <div class="detail-group">
 
-                    <label>
+                    <label>Position</label>
 
-                        Position
-
-                    </label>
-
-                    <p id="employee-position-detail">
-
-                        -
-
-                    </p>
+                    <p id="employee-position-detail">-</p>
 
                 </div>
 
 
                 <div class="detail-group">
 
-                    <label>
+                    <label>Status</label>
 
-                        Status
-
-                    </label>
-
-                    <p id="employee-status-detail">
-
-                        -
-
-                    </p>
+                    <p id="employee-status-detail">-</p>
 
                 </div>
 
@@ -526,12 +548,7 @@
 
         </div>
 
-
-
-
-        <!-- EDIT MODAL -->
-
-        <div class="edit-modal">
+            <div class="edit-modal">
 
             <div class="edit-modal-content">
 
@@ -658,6 +675,7 @@
     </main>
 
 </div>
+
 
 
 <script src="js/session.js"></script>
