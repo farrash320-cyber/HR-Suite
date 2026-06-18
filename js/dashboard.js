@@ -386,3 +386,26 @@ dropdown.style.display="block";
 }
 
 });
+
+// ======================================
+// SIDEBAR COLLAPSE
+// ======================================
+
+let collapseButton =
+document.querySelector(
+".collapse-btn"
+);
+
+let sidebar =
+document.querySelector(
+".sidebar"
+);
+
+collapseButton.addEventListener(
+"click",()=>{
+
+sidebar.classList.toggle(
+"collapsed"
+);
+
+});
