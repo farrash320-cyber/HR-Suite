@@ -100,14 +100,6 @@
 
             <li>
 
-                <i class="fa-solid fa-bullhorn"></i>
-
-                Announcement
-
-            </li>
-
-            <li>
-
                 <i class="fa-solid fa-chart-column"></i>
 
                 Reports
@@ -151,6 +143,7 @@
 
                 <input
                 type="text"
+                id="searchEmployee"
                 placeholder="Search employee...">
 
             </div>
@@ -227,7 +220,7 @@
 
             <p>
 
-                Manage all employee information.
+                Manage employee information.
 
             </p>
 
@@ -243,31 +236,50 @@
 
                 <h3>Total Employee</h3>
 
-                <h1>125</h1>
+                <h1 id="totalEmployeeCount">
+
+                    0
+
+                </h1>
 
             </div>
+
 
             <div class="card">
 
                 <h3>Active Employee</h3>
 
-                <h1>117</h1>
+                <h1 id="activeEmployeeCount">
+
+                    0
+
+                </h1>
 
             </div>
+
 
             <div class="card">
 
                 <h3>Inactive Employee</h3>
 
-                <h1>8</h1>
+                <h1 id="inactiveEmployeeCount">
+
+                    0
+
+                </h1>
 
             </div>
+
 
             <div class="card">
 
                 <h3>Department</h3>
 
-                <h1>6</h1>
+                <h1 id="departmentCount">
+
+                    0
+
+                </h1>
 
             </div>
 
@@ -325,146 +337,11 @@
 
                     <tbody>
 
-                        <tr>
-
-                            <td>EMP001</td>
-
-                            <td>James Kirdpan</td>
-
-                            <td>Finance</td>
-
-                            <td>Finance Staff</td>
-
-                            <td>
-
-                                <span class="status active-status">
-
-                                    Active
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <button class="view-btn">
-
-                                    View
-
-                                </button>
-
-                                <button class="edit-btn">
-
-                                    Edit
-
-                                </button>
-
-                                <button class="delete-btn">
-
-                                    Delete
-
-                                </button>
-
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>EMP002</td>
-
-                            <td>John Doe</td>
-
-                            <td>HR</td>
-
-                            <td>HR Officer</td>
-
-                            <td>
-
-                                <span class="status active-status">
-
-                                    Active
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <button class="view-btn">
-
-                                    View
-
-                                </button>
-
-                                <button class="edit-btn">
-
-                                    Edit
-
-                                </button>
-
-                                <button class="delete-btn">
-
-                                    Delete
-
-                                </button>
-
-                            </td>
-
-                        </tr>
-
-
-
-                        <tr>
-
-                            <td>EMP003</td>
-
-                            <td>Michael Lee</td>
-
-                            <td>IT</td>
-
-                            <td>Programmer</td>
-
-                            <td>
-
-                                <span class="status inactive-status">
-
-                                    Inactive
-
-                                </span>
-
-                            </td>
-
-                            <td>
-
-                                <button class="view-btn">
-
-                                    View
-
-                                </button>
-
-                                <button class="edit-btn">
-
-                                    Edit
-
-                                </button>
-
-                                <button class="delete-btn">
-
-                                    Delete
-
-                                </button>
-
-                            </td>
-
-                        </tr>
-
                     </tbody>
 
                 </table>
 
             </div>
-
 
 
             <!-- PAGINATION -->
@@ -480,18 +357,6 @@
                 <button class="page-active">
 
                     1
-
-                </button>
-
-                <button>
-
-                    2
-
-                </button>
-
-                <button>
-
-                    3
 
                 </button>
 
@@ -526,7 +391,6 @@
                 </div>
 
 
-
                 <div class="form-group">
 
                     <label>
@@ -537,10 +401,10 @@
 
                     <input
                     type="text"
-                    placeholder="EMP004">
+                    id="employeeID"
+                    placeholder="Employee ID">
 
                 </div>
-
 
 
                 <div class="form-group">
@@ -553,10 +417,10 @@
 
                     <input
                     type="text"
-                    placeholder="Employee Name">
+                    id="employeeName"
+                    placeholder="Full Name">
 
                 </div>
-
 
 
                 <div class="form-group">
@@ -567,36 +431,12 @@
 
                     </label>
 
-                    <select>
-
-                        <option>
-
-                            Finance
-
-                        </option>
-
-                        <option>
-
-                            HR
-
-                        </option>
-
-                        <option>
-
-                            IT
-
-                        </option>
-
-                        <option>
-
-                            Marketing
-
-                        </option>
-
-                    </select>
+                    <input
+                    type="text"
+                    id="department"
+                    placeholder="Department">
 
                 </div>
-
 
 
                 <div class="form-group">
@@ -609,10 +449,10 @@
 
                     <input
                     type="text"
+                    id="position"
                     placeholder="Position">
 
                 </div>
-
 
 
                 <div class="form-group">
@@ -623,7 +463,7 @@
 
                     </label>
 
-                    <select>
+                    <select id="status">
 
                         <option>
 
@@ -640,7 +480,6 @@
                     </select>
 
                 </div>
-
 
 
                 <div class="modal-button">
@@ -663,333 +502,250 @@
 
         </div>
 
-    <!-- VIEW EMPLOYEE MODAL -->
-
-<div class="view-modal">
-
-    <div class="view-modal-content">
-
-        <div class="modal-header">
-
-            <h2>
-
-                Employee Information
-
-            </h2>
-
-            <i class="fa-solid fa-xmark close-view-modal"></i>
-
-        </div>
 
 
-        <div class="detail-group">
+        <!-- VIEW MODAL -->
 
-            <label>
+        <div class="view-modal">
 
-                Employee ID
+            <div class="view-modal-content">
 
-            </label>
+                <div class="modal-header">
 
-            <p id="employee-id-detail">
+                    <h2>
 
-                -
+                        Employee Information
 
-            </p>
+                    </h2>
 
-        </div>
+                    <i class="fa-solid fa-xmark close-view-modal"></i>
 
-
-        <div class="detail-group">
-
-            <label>
-
-                Full Name
-
-            </label>
-
-            <p id="employee-name-detail">
-
-                -
-
-            </p>
-
-        </div>
+                </div>
 
 
-        <div class="detail-group">
+                <div class="detail-group">
 
-            <label>
+                    <label>
 
-                Department
+                        Employee ID
 
-            </label>
+                    </label>
 
-            <p id="employee-department-detail">
+                    <p id="employee-id-detail">
 
-                -
+                        -
 
-            </p>
+                    </p>
 
-        </div>
-
-
-        <div class="detail-group">
-
-            <label>
-
-                Position
-
-            </label>
-
-            <p id="employee-position-detail">
-
-                -
-
-            </p>
-
-        </div>
+                </div>
 
 
-        <div class="detail-group">
+                <div class="detail-group">
 
-            <label>
+                    <label>
 
-                Status
+                        Full Name
 
-            </label>
+                    </label>
 
-            <p id="employee-status-detail">
+                    <p id="employee-name-detail">
 
-                -
+                        -
 
-            </p>
+                    </p>
 
-        </div>
+                </div>
 
 
-        <div class="detail-group">
+                <div class="detail-group">
 
-            <label>
+                    <label>
 
-                Email
+                        Department
 
-            </label>
+                    </label>
 
-            <p>
+                    <p id="employee-department-detail">
 
-                -
+                        -
 
-            </p>
+                    </p>
+
+                </div>
+
+
+                <div class="detail-group">
+
+                    <label>
+
+                        Position
+
+                    </label>
+
+                    <p id="employee-position-detail">
+
+                        -
+
+                    </p>
+
+                </div>
+
+
+                <div class="detail-group">
+
+                    <label>
+
+                        Status
+
+                    </label>
+
+                    <p id="employee-status-detail">
+
+                        -
+
+                    </p>
+
+                </div>
+
+
+                <button class="close-view-btn">
+
+                    Close
+
+                </button>
+
+            </div>
 
         </div>
 
 
-        <div class="detail-group">
 
-            <label>
+        <!-- EDIT MODAL -->
 
-                Phone
+        <div class="edit-modal">
 
-            </label>
+            <div class="edit-modal-content">
 
-            <p>
+                <div class="modal-header">
 
-                -
+                    <h2>
 
-            </p>
+                        Edit Employee
+
+                    </h2>
+
+                    <i class="fa-solid fa-xmark close-edit-modal"></i>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Employee ID
+
+                    </label>
+
+                    <input
+                    type="text"
+                    id="edit-id">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Full Name
+
+                    </label>
+
+                    <input
+                    type="text"
+                    id="edit-name">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Department
+
+                    </label>
+
+                    <input
+                    type="text"
+                    id="edit-department">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Position
+
+                    </label>
+
+                    <input
+                    type="text"
+                    id="edit-position">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Status
+
+                    </label>
+
+                    <select id="edit-status">
+
+                        <option>
+
+                            Active
+
+                        </option>
+
+                        <option>
+
+                            Inactive
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="modal-button">
+
+                    <button class="update-btn">
+
+                        Update
+
+                    </button>
+
+                    <button class="cancel-edit-btn">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </div>
 
         </div>
 
-
-        <div class="detail-group">
-
-            <label>
-
-                Join Date
-
-            </label>
-
-            <p>
-
-                -
-
-            </p>
-
-        </div>
-
-
-        <div class="detail-group">
-
-            <label>
-
-                Address
-
-            </label>
-
-            <p>
-
-                -
-
-            </p>
-
-        </div>
-
-
-        <div class="detail-group">
-
-            <label>
-
-                Emergency Contact
-
-            </label>
-
-            <p>
-
-                -
-
-            </p>
-
-        </div>
-
-
-        <button class="close-view-btn">
-
-            Close
-
-        </button>
-
-    </div>
-
-</div>
-
-<!-- EDIT EMPLOYEE MODAL -->
-
-<div class="edit-modal">
-
-    <div class="edit-modal-content">
-
-        <div class="modal-header">
-
-            <h2>
-
-                Edit Employee
-
-            </h2>
-
-            <i class="fa-solid fa-xmark close-edit-modal"></i>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-
-                Employee ID
-
-            </label>
-
-            <input
-            type="text"
-            id="edit-id">
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-
-                Full Name
-
-            </label>
-
-            <input
-            type="text"
-            id="edit-name">
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-
-                Department
-
-            </label>
-
-            <input
-            type="text"
-            id="edit-department">
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-
-                Position
-
-            </label>
-
-            <input
-            type="text"
-            id="edit-position">
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-
-                Status
-
-            </label>
-
-            <select id="edit-status">
-
-                <option>
-
-                    Active
-
-                </option>
-
-                <option>
-
-                    Inactive
-
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div class="modal-button">
-
-            <button
-            class="update-btn">
-
-                Update
-
-            </button>
-
-
-            <button
-            class="cancel-edit-btn">
-
-                Cancel
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
     </main>
 
 </div>
@@ -1002,4 +758,4 @@
 
 </body>
 
-</html>                        
+</html>
