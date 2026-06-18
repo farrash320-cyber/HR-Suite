@@ -15,16 +15,13 @@ document.querySelector(
 ".employee-table tbody"
 );
 
-const searchBox =
-document.querySelector(
-".search-box input"
+const searchInput =
+document.getElementById(
+"searchEmployee"
 );
 
 
-
-// ======================================
 // ADD MODAL
-// ======================================
 
 const addModal =
 document.querySelector(
@@ -36,12 +33,12 @@ document.querySelector(
 ".add-btn"
 );
 
-const closeAddButton =
+const closeButton =
 document.querySelector(
 ".close-modal"
 );
 
-const cancelAddButton =
+const cancelButton =
 document.querySelector(
 ".cancel-btn"
 );
@@ -76,9 +73,9 @@ addModal.style.display =
 // CLOSE ADD MODAL
 // ======================================
 
-if(closeAddButton){
+if(closeButton){
 
-closeAddButton.onclick = ()=>{
+closeButton.onclick = ()=>{
 
 addModal.style.display =
 "none";
@@ -88,9 +85,9 @@ addModal.style.display =
 }
 
 
-if(cancelAddButton){
+if(cancelButton){
 
-cancelAddButton.onclick = ()=>{
+cancelButton.onclick = ()=>{
 
 addModal.style.display =
 "none";
@@ -110,30 +107,31 @@ if(saveButton){
 
 saveButton.onclick = ()=>{
 
-const inputs =
-document.querySelectorAll(
-".form-group input"
-);
-
-const selects =
-document.querySelectorAll(
-".form-group select"
-);
-
 let employeeID =
-inputs[0].value;
+document.getElementById(
+"employeeID"
+).value;
 
 let employeeName =
-inputs[1].value;
+document.getElementById(
+"employeeName"
+).value;
 
 let department =
-selects[0].value;
+document.getElementById(
+"department"
+).value;
 
 let position =
-inputs[2].value;
+document.getElementById(
+"position"
+).value;
 
 let status =
-selects[1].value;
+document.getElementById(
+"status"
+).value;
+
 
 
 if(
@@ -141,6 +139,8 @@ if(
 employeeID==="" ||
 
 employeeName==="" ||
+
+department==="" ||
 
 position===""
 
@@ -228,18 +228,43 @@ saveEmployees();
 
 updateStatistics();
 
-
-inputs[0].value = "";
-
-inputs[1].value = "";
-
-inputs[2].value = "";
-
+clearForm();
 
 addModal.style.display =
 "none";
 
 };
+
+}
+
+
+
+
+// ======================================
+// CLEAR FORM
+// ======================================
+
+function clearForm(){
+
+document.getElementById(
+"employeeID"
+).value = "";
+
+document.getElementById(
+"employeeName"
+).value = "";
+
+document.getElementById(
+"department"
+).value = "";
+
+document.getElementById(
+"position"
+).value = "";
+
+document.getElementById(
+"status"
+).selectedIndex = 0;
 
 }
 
@@ -300,6 +325,7 @@ let currentRow = null;
 
 document.addEventListener(
 "click",(e)=>{
+
 
 // DELETE
 
@@ -435,6 +461,66 @@ editModal.style.display =
 
 });
 
+
+
+
+// ======================================
+// CLOSE VIEW MODAL
+// ======================================
+
+if(closeViewButton){
+
+closeViewButton.onclick = ()=>{
+
+viewModal.style.display =
+"none";
+
+};
+
+}
+
+
+if(closeViewIcon){
+
+closeViewIcon.onclick = ()=>{
+
+viewModal.style.display =
+"none";
+
+};
+
+}
+
+
+
+
+// ======================================
+// CLOSE EDIT MODAL
+// ======================================
+
+if(cancelEditButton){
+
+cancelEditButton.onclick = ()=>{
+
+editModal.style.display =
+"none";
+
+};
+
+}
+
+
+if(closeEditButton){
+
+closeEditButton.onclick = ()=>{
+
+editModal.style.display =
+"none";
+
+};
+
+}
+
 // ======================================
 // UPDATE EMPLOYEE
 // ======================================
@@ -504,7 +590,6 @@ saveEmployees();
 
 updateStatistics();
 
-
 editModal.style.display =
 "none";
 
@@ -521,13 +606,13 @@ editModal.style.display =
 // SEARCH EMPLOYEE
 // ======================================
 
-if(searchBox){
+if(searchInput){
 
-searchBox.addEventListener(
+searchInput.addEventListener(
 "keyup",()=>{
 
 let keyword =
-searchBox.value
+searchInput.value
 .toLowerCase();
 
 let rows =
@@ -616,8 +701,7 @@ document.querySelectorAll(
 ".employee-table tbody tr"
 );
 
-let total =
-rows.length;
+let total = rows.length;
 
 let active = 0;
 
@@ -660,8 +744,7 @@ department
 ){
 
 departmentList.push(
-department
-);
+department);
 
 }
 
@@ -669,111 +752,28 @@ department
 
 
 
-let totalCard =
 document.getElementById(
 "totalEmployeeCount"
-);
-
-let activeCard =
-document.getElementById(
-"activeEmployeeCount"
-);
-
-let inactiveCard =
-document.getElementById(
-"inactiveEmployeeCount"
-);
-
-let departmentCard =
-document.getElementById(
-"departmentCount"
-);
-
-
-if(totalCard){
-
-totalCard.innerHTML =
+).innerHTML =
 total;
 
-}
 
-
-if(activeCard){
-
-activeCard.innerHTML =
+document.getElementById(
+"activeEmployeeCount"
+).innerHTML =
 active;
 
-}
 
-
-if(inactiveCard){
-
-inactiveCard.innerHTML =
+document.getElementById(
+"inactiveEmployeeCount"
+).innerHTML =
 inactive;
 
-}
 
-
-if(departmentCard){
-
-departmentCard.innerHTML =
+document.getElementById(
+"departmentCount"
+).innerHTML =
 departmentList.length;
-
-}
-
-}
-
-
-
-
-// ======================================
-// CLOSE MODALS
-// ======================================
-
-if(closeViewButton){
-
-closeViewButton.onclick = ()=>{
-
-viewModal.style.display =
-"none";
-
-};
-
-}
-
-
-if(closeViewIcon){
-
-closeViewIcon.onclick = ()=>{
-
-viewModal.style.display =
-"none";
-
-};
-
-}
-
-
-if(cancelEditButton){
-
-cancelEditButton.onclick = ()=>{
-
-editModal.style.display =
-"none";
-
-};
-
-}
-
-
-if(closeEditButton){
-
-closeEditButton.onclick = ()=>{
-
-editModal.style.display =
-"none";
-
-};
 
 }
 
@@ -837,6 +837,6 @@ updateStatistics();
 
 console.log(
 
-"NEXORA Employee Module Ready"
+"NEXORA Employee Module V2 Ready"
 
 );
