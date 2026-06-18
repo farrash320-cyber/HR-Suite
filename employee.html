@@ -3,24 +3,24 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-<title>Employee Management | NEXORA</title>
+    <title>Employee Management | NEXORA</title>
 
-<link rel="stylesheet"
-href="css/global.css">
+    <link rel="stylesheet"
+    href="css/global.css">
 
-<link rel="stylesheet"
-href="css/dashboard.css">
+    <link rel="stylesheet"
+    href="css/dashboard.css">
 
-<link rel="stylesheet"
-href="css/employee.css">
+    <link rel="stylesheet"
+    href="css/employee.css">
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
 
@@ -29,6 +29,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 <div class="container">
 
     <!-- SIDEBAR -->
+
     <aside class="sidebar">
 
         <div class="logo">
@@ -136,10 +137,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
     <!-- MAIN -->
+
     <main class="main">
 
 
         <!-- HEADER -->
+
         <section class="header">
 
             <div class="search-box">
@@ -213,6 +216,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
         <!-- TITLE -->
+
         <section class="greeting">
 
             <h2>
@@ -232,6 +236,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 
         <!-- STATISTICS -->
+
         <section class="cards">
 
             <div class="card">
@@ -242,24 +247,21 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
             </div>
 
-
             <div class="card">
 
-                <h3>Active</h3>
+                <h3>Active Employee</h3>
 
                 <h1>117</h1>
 
             </div>
 
-
             <div class="card">
 
-                <h3>Inactive</h3>
+                <h3>Inactive Employee</h3>
 
                 <h1>8</h1>
 
             </div>
-
 
             <div class="card">
 
@@ -271,7 +273,10 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
         </section>
 
+
+
         <!-- EMPLOYEE PANEL -->
+
         <section class="panel">
 
             <div class="employee-header">
@@ -291,6 +296,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                 </button>
 
             </div>
+
 
 
             <div class="table-container">
@@ -362,8 +368,6 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
                             </td>
 
                         </tr>
-
-
 
                         <tr>
 
@@ -459,194 +463,206 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
                 </table>
 
-<div class="pagination">
+            </div>
 
-    <button>
 
-        Previous
 
-    </button>
+            <!-- PAGINATION -->
 
-    <button class="page-active">
+            <div class="pagination">
 
-        1
+                <button>
 
-    </button>
+                    Previous
 
-    <button>
+                </button>
 
-        2
+                <button class="page-active">
 
-    </button>
+                    1
 
-    <button>
+                </button>
 
-        3
+                <button>
 
-    </button>
+                    2
 
-    <button>
+                </button>
 
-        Next
+                <button>
 
-    </button>
+                    3
 
-</div>
+                </button>
+
+                <button>
+
+                    Next
+
+                </button>
 
             </div>
 
         </section>
 
-<!-- ADD EMPLOYEE MODAL -->
 
-<div class="modal">
 
-    <div class="modal-content">
+        <!-- ADD EMPLOYEE MODAL -->
 
-        <div class="modal-header">
+        <div class="modal">
 
-            <h2>
+            <div class="modal-content">
 
-                Add Employee
+                <div class="modal-header">
 
-            </h2>
+                    <h2>
 
-            <i class="fa-solid fa-xmark close-modal"></i>
+                        Add Employee
+
+                    </h2>
+
+                    <i class="fa-solid fa-xmark close-modal"></i>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Employee ID
+
+                    </label>
+
+                    <input
+                    type="text"
+                    placeholder="EMP004">
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Full Name
+
+                    </label>
+
+                    <input
+                    type="text"
+                    placeholder="Employee Name">
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Department
+
+                    </label>
+
+                    <select>
+
+                        <option>
+
+                            Finance
+
+                        </option>
+
+                        <option>
+
+                            HR
+
+                        </option>
+
+                        <option>
+
+                            IT
+
+                        </option>
+
+                        <option>
+
+                            Marketing
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Position
+
+                    </label>
+
+                    <input
+                    type="text"
+                    placeholder="Position">
+
+                </div>
+
+
+
+                <div class="form-group">
+
+                    <label>
+
+                        Status
+
+                    </label>
+
+                    <select>
+
+                        <option>
+
+                            Active
+
+                        </option>
+
+                        <option>
+
+                            Inactive
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="modal-button">
+
+                    <button class="save-btn">
+
+                        Save
+
+                    </button>
+
+                    <button class="cancel-btn">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </div>
 
         </div>
 
-
-        <div class="form-group">
-
-            <label>
-
-                Employee ID
-
-            </label>
-
-            <input
-            type="text"
-            placeholder="EMP004">
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-
-                Full Name
-
-            </label>
-
-            <input
-            type="text"
-            placeholder="Employee Name">
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-
-                Department
-
-            </label>
-
-            <select>
-
-                <option>
-
-                    Finance
-
-                </option>
-
-                <option>
-
-                    HR
-
-                </option>
-
-                <option>
-
-                    IT
-
-                </option>
-
-                <option>
-
-                    Marketing
-
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-
-                Position
-
-            </label>
-
-            <input
-            type="text"
-            placeholder="Position">
-
-        </div>
-
-
-        <div class="form-group">
-
-            <label>
-
-                Status
-
-            </label>
-
-            <select>
-
-                <option>
-
-                    Active
-
-                </option>
-
-                <option>
-
-                    Inactive
-
-                </option>
-
-            </select>
-
-        </div>
-
-
-        <div class="modal-button">
-
-            <button class="save-btn">
-
-                Save
-
-            </button>
-
-            <button class="cancel-btn">
-
-                Cancel
-
-            </button>
-
-        </div>
-
-    </div>
-
-</div>
-        
     </main>
 
 </div>
@@ -659,4 +675,4 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
 
 </body>
 
-</html>
+</html>                        
