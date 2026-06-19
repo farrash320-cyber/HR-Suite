@@ -646,3 +646,121 @@ console.log(
 );
 
 };
+
+// ======================================
+// EMPLOYEE DASHBOARD DATA
+// ======================================
+
+function loadDashboardData(){
+
+let employeeData =
+localStorage.getItem(
+"employeeData"
+);
+
+
+if(!employeeData){
+
+return;
+
+}
+
+
+let temp =
+document.createElement(
+"tbody"
+);
+
+temp.innerHTML =
+employeeData;
+
+
+let rows =
+temp.querySelectorAll(
+"tr"
+);
+
+
+let total =
+rows.length;
+
+let active = 0;
+
+let inactive = 0;
+
+let departmentList = [];
+
+
+
+rows.forEach((row)=>{
+
+let department =
+row.cells[2]
+.innerText
+.trim();
+
+
+let status =
+row.cells[4]
+.innerText
+.trim();
+
+
+
+if(
+status==="Active"
+){
+
+active++;
+
+}
+else{
+
+inactive++;
+
+}
+
+
+
+if(
+!departmentList.includes(
+department
+)
+){
+
+departmentList.push(
+department
+);
+
+}
+
+});
+
+
+
+// UPDATE CARD
+
+document.getElementById(
+"totalEmployees"
+).innerText =
+total;
+
+
+document.getElementById(
+"activeEmployees"
+).innerText =
+active;
+
+
+document.getElementById(
+"inactiveEmployees"
+).innerText =
+inactive;
+
+
+document.getElementById(
+"departmentCount"
+).innerText =
+departmentList.length;
+
+}
