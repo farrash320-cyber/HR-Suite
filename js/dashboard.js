@@ -860,3 +860,160 @@ console.log(
 "NEXORA Dashboard Final Sync Ready"
 
 );
+
+// ======================================
+// LOCAL STORAGE
+// ======================================
+
+function getEmployeeArray(){
+
+let employeeArray = [];
+
+let rows =
+document.querySelectorAll(
+".employee-table tbody tr"
+);
+
+
+rows.forEach((row)=>{
+
+employeeArray.push({
+
+id:
+row.cells[0].innerText,
+
+name:
+row.cells[1].innerText,
+
+department:
+row.cells[2].innerText,
+
+position:
+row.cells[3].innerText,
+
+status:
+row.cells[4]
+.innerText
+.trim()
+
+});
+
+});
+
+
+return employeeArray;
+
+}
+
+
+
+
+function saveEmployees(){
+
+localStorage.setItem(
+
+"employeeData",
+
+JSON.stringify(
+
+getEmployeeArray()
+
+)
+
+);
+
+}
+
+
+
+
+function loadEmployees(){
+
+let employeeData =
+JSON.parse(
+
+localStorage.getItem(
+"employeeData"
+
+)
+
+) || [];
+
+
+tableBody.innerHTML = "";
+
+
+employeeData.forEach((employee)=>{
+
+let statusClass =
+
+employee.status==="Active"
+
+?
+
+"active-status"
+
+:
+
+"inactive-status";
+
+
+let row =
+document.createElement(
+"tr"
+);
+
+
+row.innerHTML =
+
+`
+
+<td>${employee.id}</td>
+
+<td>${employee.name}</td>
+
+<td>${employee.department}</td>
+
+<td>${employee.position}</td>
+
+<td>
+
+<span class="status ${statusClass}">
+
+${employee.status}
+
+</span>
+
+</td>
+
+<td>
+
+<button class="view-btn">
+
+View
+
+</button>
+
+<button class="edit-btn">
+
+Edit
+
+</button>
+
+<button class="delete-btn">
+
+Delete
+
+</button>
+
+</td>
+
+`;
+
+
+tableBody.appendChild(
+row);
+
+});
+
+}
