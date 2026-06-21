@@ -8,6 +8,27 @@ protectPage();
 
 
 // ======================================
+// DATABASE
+// ======================================
+
+let employeeData =
+JSON.parse(
+
+localStorage.getItem(
+"employeeData"
+)
+
+) || [];
+
+
+
+let selectedIndex =
+null;
+
+
+
+
+// ======================================
 // ELEMENT
 // ======================================
 
@@ -52,27 +73,6 @@ const updateButton =
 document.querySelector(
 ".update-btn"
 );
-
-
-
-
-// ======================================
-// DATABASE
-// ======================================
-
-let employeeData =
-JSON.parse(
-
-localStorage.getItem(
-"employeeData"
-)
-
-) || [];
-
-
-
-let selectedRow =
-null;
 
 
 
@@ -213,7 +213,7 @@ addModal.style.display =
 
 
 // ======================================
-// CLOSE MODAL
+// CLOSE ADD MODAL
 // ======================================
 
 document.addEventListener(
@@ -223,16 +223,8 @@ if(
 e.target.classList.contains(
 "close-modal"
 )
-){
+||
 
-addModal.style.display =
-"none";
-
-}
-
-
-
-if(
 e.target.classList.contains(
 "cancel-btn"
 )
@@ -299,25 +291,25 @@ saveButton.onclick = ()=>{
 let id =
 document.getElementById(
 "employeeID"
-).value;
+).value.trim();
 
 
 let name =
 document.getElementById(
 "employeeName"
-).value;
+).value.trim();
 
 
 let department =
 document.getElementById(
 "department"
-).value;
+).value.trim();
 
 
 let position =
 document.getElementById(
 "position"
-).value;
+).value.trim();
 
 
 let status =
@@ -382,13 +374,16 @@ addModal.style.display =
 }
 
 // ======================================
-// VIEW EMPLOYEE
+// TABLE ACTION
 // ======================================
 
 document.addEventListener(
 "click",(e)=>{
 
+
+// ======================================
 // VIEW
+// ======================================
 
 if(
 e.target.classList.contains(
@@ -396,13 +391,14 @@ e.target.classList.contains(
 )
 ){
 
-let index =
+selectedIndex =
 e.target
 .closest("tr")
 .rowIndex - 1;
 
+
 let employee =
-employeeData[index];
+employeeData[selectedIndex];
 
 
 document.getElementById(
@@ -442,7 +438,10 @@ viewModal.style.display =
 
 
 
+
+// ======================================
 // EDIT
+// ======================================
 
 if(
 e.target.classList.contains(
@@ -450,14 +449,14 @@ e.target.classList.contains(
 )
 ){
 
-selectedRow =
+selectedIndex =
 e.target
 .closest("tr")
 .rowIndex - 1;
 
 
 let employee =
-employeeData[selectedRow];
+employeeData[selectedIndex];
 
 
 document.getElementById(
@@ -497,7 +496,10 @@ editModal.style.display =
 
 
 
+
+// ======================================
 // DELETE
+// ======================================
 
 if(
 e.target.classList.contains(
@@ -511,13 +513,11 @@ e.target
 .rowIndex - 1;
 
 
-let confirmDelete =
+if(
 confirm(
 "Delete this employee?"
-);
-
-
-if(confirmDelete){
+)
+){
 
 employeeData.splice(
 index,
@@ -536,6 +536,63 @@ updateStatistics();
 }
 
 });
+
+// ======================================
+// UPDATE EMPLOYEE
+// ======================================
+
+if(updateButton){
+
+updateButton.onclick = ()=>{
+
+if(
+selectedIndex!==null
+){
+
+employeeData[selectedIndex] = {
+
+id:
+document.getElementById(
+"edit-id"
+).value,
+
+name:
+document.getElementById(
+"edit-name"
+).value,
+
+department:
+document.getElementById(
+"edit-department"
+).value,
+
+position:
+document.getElementById(
+"edit-position"
+).value,
+
+status:
+document.getElementById(
+"edit-status"
+).value
+
+};
+
+
+saveDatabase();
+
+renderTable();
+
+updateStatistics();
+
+editModal.style.display =
+"none";
+
+}
+
+};
+
+}
 
 // ======================================
 // SEARCH EMPLOYEE
@@ -609,7 +666,6 @@ let inactive = 0;
 let departmentList = [];
 
 
-
 employeeData.forEach((employee)=>{
 
 if(
@@ -626,13 +682,10 @@ inactive++;
 }
 
 
-
 if(
-
 !departmentList.includes(
 employee.department
 )
-
 ){
 
 departmentList.push(
@@ -670,61 +723,60 @@ departmentList.length;
 
 }
 
-
-
-
 // ======================================
-// CLOSE MODAL
+// CLOSE VIEW MODAL
 // ======================================
 
-document.addEventListener(
-"click",(e)=>{
-
-if(
-e.target.classList.contains(
-"close-view-btn"
-)
-||
-
-e.target.classList.contains(
-"close-view-modal"
-)
-){
+document.querySelector(
+".close-view-btn"
+).onclick = ()=>{
 
 viewModal.style.display =
 "none";
 
-}
+};
+
+
+document.querySelector(
+".close-view-modal"
+).onclick = ()=>{
+
+viewModal.style.display =
+"none";
+
+};
 
 
 
-if(
-e.target.classList.contains(
-"cancel-edit-btn"
-)
-||
 
-e.target.classList.contains(
-"close-edit-modal"
-)
-){
+// ======================================
+// CLOSE EDIT MODAL
+// ======================================
+
+document.querySelector(
+".cancel-edit-btn"
+).onclick = ()=>{
 
 editModal.style.display =
 "none";
 
-}
-
-});
+};
 
 
+document.querySelector(
+".close-edit-modal"
+).onclick = ()=>{
 
+editModal.style.display =
+"none";
+
+};
 
 // ======================================
 // CLICK OUTSIDE MODAL
 // ======================================
 
-window.addEventListener(
-"click",(e)=>{
+window.onclick = (e)=>{
 
 if(
 e.target===addModal
@@ -755,10 +807,7 @@ editModal.style.display =
 
 }
 
-});
-
-
-
+};
 
 // ======================================
 // INITIALIZE
