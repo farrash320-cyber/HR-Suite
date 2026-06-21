@@ -1017,3 +1017,178 @@ row);
 });
 
 }
+
+// ======================================
+// RECENT EMPLOYEES
+// ======================================
+
+function loadRecentEmployees(){
+
+let employeeData =
+JSON.parse(
+
+localStorage.getItem(
+"employeeData"
+)
+
+) || [];
+
+
+let container =
+document.getElementById(
+"recentEmployees"
+);
+
+
+if(!container){
+
+return;
+
+}
+
+
+container.innerHTML = "";
+
+
+if(employeeData.length===0){
+
+container.innerHTML =
+
+`
+
+<p>
+
+No employee data.
+
+</p>
+
+`;
+
+return;
+
+}
+
+
+employeeData
+.slice(-5)
+.reverse()
+.forEach((employee)=>{
+
+container.innerHTML +=
+
+`
+
+<div class="recent-item">
+
+<h4>
+
+${employee.id}
+
+-
+
+${employee.name}
+
+</h4>
+
+<p>
+
+${employee.department}
+
+|
+
+${employee.position}
+
+</p>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+
+
+// ======================================
+// RECENT ACTIVITY
+// ======================================
+
+function loadRecentActivity(){
+
+let employeeData =
+JSON.parse(
+
+localStorage.getItem(
+"employeeData"
+)
+
+) || [];
+
+
+let container =
+document.getElementById(
+"recentActivity"
+);
+
+
+if(!container){
+
+return;
+
+}
+
+
+container.innerHTML = "";
+
+
+if(employeeData.length===0){
+
+container.innerHTML =
+
+`
+
+<p>
+
+No activity.
+
+</p>
+
+`;
+
+return;
+
+}
+
+
+employeeData
+.slice(-5)
+.reverse()
+.forEach((employee)=>{
+
+container.innerHTML +=
+
+`
+
+<div class="recent-item">
+
+<p>
+
+${employee.name}
+
+added to
+
+${employee.department}
+
+department
+
+</p>
+
+</div>
+
+`;
+
+});
+
+}
