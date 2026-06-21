@@ -81,10 +81,13 @@ document.querySelector(
 ".dark-mode"
 );
 
+
 if(
+
 localStorage.getItem(
 "theme"
 )==="dark"
+
 ){
 
 document.body.classList.add(
@@ -92,6 +95,7 @@ document.body.classList.add(
 );
 
 }
+
 
 if(darkButton){
 
@@ -127,6 +131,105 @@ localStorage.setItem(
 }
 
 // ======================================
+// NOTIFICATION
+// ======================================
+
+const notification =
+document.querySelector(
+".notification"
+);
+
+const notificationPanel =
+document.querySelector(
+".notification-panel"
+);
+
+
+
+
+// ======================================
+// PROFILE
+// ======================================
+
+const profile =
+document.querySelector(
+".profile"
+);
+
+const dropdown =
+document.querySelector(
+".dropdown-menu"
+);
+
+
+
+
+if(
+notification &&
+notificationPanel
+){
+
+notification.onclick = ()=>{
+
+notificationPanel.style.display =
+
+notificationPanel.style.display==="block"
+
+?
+
+"none"
+
+:
+
+"block";
+
+
+if(dropdown){
+
+dropdown.style.display =
+"none";
+
+}
+
+};
+
+}
+
+
+
+
+if(
+profile &&
+dropdown
+){
+
+profile.onclick = ()=>{
+
+dropdown.style.display =
+
+dropdown.style.display==="block"
+
+?
+
+"none"
+
+:
+
+"block";
+
+
+if(notificationPanel){
+
+notificationPanel.style.display =
+"none";
+
+}
+
+};
+
+}
+
+// ======================================
 // DASHBOARD DATA
 // ======================================
 
@@ -140,7 +243,6 @@ localStorage.getItem(
 )
 
 ) || [];
-
 
 
 let total =
@@ -242,7 +344,6 @@ container.innerHTML =
 "";
 
 
-
 employeeData
 .slice(-5)
 .reverse()
@@ -256,21 +357,13 @@ container.innerHTML +=
 
 <h4>
 
-${employee.id}
-
--
-
-${employee.name}
+${employee.id} - ${employee.name}
 
 </h4>
 
 <p>
 
-${employee.department}
-
-|
-
-${employee.position}
+${employee.department} | ${employee.position}
 
 </p>
 
@@ -283,67 +376,25 @@ ${employee.position}
 }
 
 // ======================================
-// RECENT ACTIVITY
+// INITIALIZE
 // ======================================
 
-function loadRecentActivity(){
+window.onload = ()=>{
 
-let employeeData =
-JSON.parse(
+loadDashboardData();
 
-localStorage.getItem(
-"employeeData"
-)
+loadRecentEmployees();
 
-) || [];
+console.log(
 
+"NEXORA Dashboard Final Ready"
 
-let container =
-document.getElementById(
-"recentActivity"
 );
 
-if(!container){
-
-return;
-
-}
-
-container.innerHTML =
-"";
+};
 
 
 
-employeeData
-.slice(-5)
-.reverse()
-.forEach((employee)=>{
-
-container.innerHTML +=
-
-`
-
-<div class="recent-item">
-
-<p>
-
-${employee.name}
-
-added to
-
-${employee.department}
-
-department
-
-</p>
-
-</div>
-
-`;
-
-});
-
-}
 
 // ======================================
 // LOGOUT
@@ -367,26 +418,3 @@ window.location.href =
 }
 
 }
-
-
-
-
-// ======================================
-// INITIALIZE
-// ======================================
-
-window.onload = ()=>{
-
-loadDashboardData();
-
-loadRecentEmployees();
-
-loadRecentActivity();
-
-console.log(
-
-"NEXORA Dashboard Final Ready"
-
-);
-
-};
