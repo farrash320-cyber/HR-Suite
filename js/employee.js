@@ -266,34 +266,13 @@ addModal.style.display =
 
 function clearForm(){
 
-document.getElementById(
-"employeeID"
-).value =
-"";
+    document.getElementById("employeeName").value = "";
 
+    document.getElementById("department").value = "";
 
-document.getElementById(
-"employeeName"
-).value =
-"";
+    document.getElementById("position").value = "";
 
-
-document.getElementById(
-"department"
-).value =
-"";
-
-
-document.getElementById(
-"position"
-).value =
-"";
-
-
-document.getElementById(
-"status"
-).selectedIndex =
-0;
+    document.getElementById("status").selectedIndex = 0;
 
 }
 
