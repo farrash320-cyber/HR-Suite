@@ -83,15 +83,31 @@ document.querySelector(
 
 function saveDatabase(){
 
-localStorage.setItem(
+    localStorage.setItem(
+        "employeeData",
+        JSON.stringify(employeeData)
+    );
 
-"employeeData",
+}
 
-JSON.stringify(
-employeeData
-)
+// ======================================
+// GENERATE EMPLOYEE ID
+// ======================================
 
-);
+function generateEmployeeID(){
+
+    if(employeeData.length === 0){
+        return "EMP-0001";
+    }
+
+    const numbers = employeeData.map(employee => {
+        const match = employee.id.match(/\d+/);
+        return match ? parseInt(match[0], 10) : 0;
+    });
+
+    const nextNumber = Math.max(...numbers) + 1;
+
+    return `EMP-${String(nextNumber).padStart(4, "0")}`;
 
 }
 
