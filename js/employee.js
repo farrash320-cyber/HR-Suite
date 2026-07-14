@@ -330,8 +330,9 @@ position===""
 
 ){
 
-alert(
-"Please complete all fields."
+showToast(
+    "Please complete all fields.",
+    "warning"
 );
 
 return;
@@ -363,10 +364,14 @@ renderTable();
 
 updateStatistics();
 
+showToast(
+    "Employee added successfully!",
+    "success"
+);
+
 clearForm();
 
-addModal.style.display =
-"none";
+addModal.style.display = "none";
 
 };
 
@@ -578,20 +583,7 @@ document.getElementById(
 };
 
 
-saveDatabase();
 
-renderTable();
-
-updateStatistics();
-
-editModal.style.display =
-"none";
-
-}
-
-};
-
-}
 
 // ======================================
 // SEARCH EMPLOYEE
