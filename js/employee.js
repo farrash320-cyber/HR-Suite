@@ -216,12 +216,16 @@ Delete
 
 if(addButton){
 
-addButton.onclick = ()=>{
+    addButton.onclick = ()=>{
 
-addModal.style.display =
-"flex";
+        clearForm();
 
-};
+        document.getElementById("employeeID").value =
+            generateEmployeeID();
+
+        addModal.style.display = "flex";
+
+    };
 
 }
 
